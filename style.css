@@ -1,20 +1,11 @@
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #000; 
+    background-color: #111;  /* Dark background */
+    color: #fff;             /* Light text */
 }
 
 h1 {
     text-align: center;
     margin-top: 50px;
-}
-
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #111;
-        color: #fff;
-    }
 }
