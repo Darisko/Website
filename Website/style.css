@@ -1,0 +1,33 @@
+.front-padge {
+    position: relative;
+    width: 100%;
+}
+
+.front-padge img {
+    padding-top: 10vh;
+    height: 75vh;
+    width: 100%;
+}
+
+.front-padge p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 5rem;
+    color: white;
+}
+
+/* fancy hover text translation */
+
+.israel-hover::after {
+    content: "Israel";
+}
+
+.israel-hover:hover::after {
+    content:"יִשְׂרָאֵל"
+}
+
+body {background-color: rgb(53, 51, 50);
+}
