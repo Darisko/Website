@@ -44,6 +44,50 @@
 .spotify-art[hidden],.spotify-art-placeholder[hidden],.spotify-progress[hidden],.spotify-open[hidden]{display:none}
 @media(max-width:600px){.spotify-row{grid-template-columns:66px minmax(0,1fr);gap:6px 11px;padding:12px 11px;border-radius:19px}.spotify-artwork{width:66px;height:66px;border-radius:16px}.spotify-copy strong{font-size:13px}.spotify-copy>#spotifyArtist{font-size:9px}.spotify-open{height:30px}}
 @media(max-width:360px){.spotify-row{grid-template-columns:56px minmax(0,1fr);column-gap:9px;padding:10px}.spotify-artwork{width:56px;height:56px;border-radius:14px}.spotify-copy strong{font-size:12px}.spotify-open{height:28px}}
+
+/* Full-width profile and dedicated music-player composition */
+.profile-page{width:min(100% - 44px,1100px)}
+.about-layout{width:100%;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:stretch;gap:22px;margin:auto;padding:28px 0}
+.profile-card{width:100%;min-height:640px;margin:0;padding:22px 24px 18px;display:flex;flex-direction:column;justify-content:space-between;border-radius:30px}
+.profile-center{width:min(100%,370px);margin:20px auto;}
+.music-player{position:relative;isolation:isolate;min-width:0;min-height:640px;display:flex;flex-direction:column;padding:24px;border:1px solid #ffffff1c;border-radius:30px;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#71549e27,transparent 55%),linear-gradient(145deg,#18151f,#0d0c12 86%);box-shadow:0 30px 100px #0008,0 0 80px #7046a51a;backdrop-filter:blur(18px)}
+.music-player:before{position:absolute;z-index:-1;inset:0;background:linear-gradient(145deg,#ffffff09,transparent 35%,transparent 75%,#b28aff08);content:"";pointer-events:none}
+.music-player-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.music-overline{margin:0 0 5px;color:#a69daf;font-size:8px;font-weight:700;letter-spacing:1.7px}
+.music-player-heading h2{margin:0;color:#fbf8ff;font:600 25px/1.2 "Space Grotesk",sans-serif;letter-spacing:-.7px}
+.music-source{display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #ffffff12;border-radius:999px;background:#ffffff08;color:#bbb2c7;font-size:7px;font-weight:700;letter-spacing:1px}
+.music-source i,.music-player-footer i{width:6px;height:6px;border-radius:50%;background:#8de2b4;box-shadow:0 0 10px #83e6ae}
+.spotify-row{position:relative;isolation:isolate;flex:1;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:18px;margin:0;padding:12px 5px 18px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none}
+.spotify-row:before{inset:-28px -18px;border-radius:28px;background-image:linear-gradient(180deg,#0e0c14ad,#0d0b13e8 58%,#0d0b13ef),var(--spotify-art-bg,radial-gradient(ellipse at center 25%,#9865d425,transparent 65%));opacity:.75;filter:blur(34px) saturate(1.5)}
+.spotify-row:after{display:none}
+.spotify-row[data-state="playing"]{border:0;background:transparent;box-shadow:none}
+.spotify-row[data-state="playing"]:before{opacity:1}
+.spotify-artwork{position:relative;z-index:1;flex:0 0 auto;width:min(100%,320px);height:auto;aspect-ratio:1;margin:0 auto 2px;overflow:hidden;border:1px solid #ffffff25;border-radius:27px;background:linear-gradient(145deg,#453957,#1c1724);box-shadow:0 20px 48px #0009,0 1px #ffffff27 inset}
+.spotify-art{width:100%;height:100%;object-fit:cover}
+.spotify-art-placeholder{gap:12px;align-content:center;color:#e0d1ff;background:radial-gradient(ellipse at 70% 15%,#d4b5ff38,transparent 50%),radial-gradient(ellipse at 20% 90%,#77dfff27,transparent 54%),linear-gradient(145deg,#382b48,#19151f)}
+.spotify-art-placeholder svg{width:42px;height:42px;stroke-width:1.2}
+.spotify-art-placeholder small{color:#d5c8e9;font-size:8px;font-weight:700;letter-spacing:2px}
+.spotify-art-shine{right:14px;bottom:12px;font-size:17px}
+.spotify-copy{position:relative;z-index:1;width:100%;align-self:stretch;gap:6px;text-align:center}
+.spotify-copy small{color:#c5a8ff;font-size:8px;letter-spacing:1.65px}
+.spotify-copy strong{max-width:100%;font-size:clamp(19px,2vw,25px);line-height:1.2;letter-spacing:-.6px}
+.spotify-copy>#spotifyArtist{color:#d2cbd9;font-size:12px}
+.spotify-copy>#spotifyAlbum{color:#928b9c;font-size:10px}
+.spotify-copy>.spotify-progress{gap:7px;margin-top:12px}
+.spotify-progress .spotify-wave{height:20px}
+.spotify-wave .wave-track{stroke:#ffffff47;stroke-width:1.4}
+.spotify-wave .wave-fill{stroke-width:2.8;filter:drop-shadow(0 0 5px #9beaffb0)}
+.spotify-times{color:#b2aabc;font-size:9px}
+.spotify-open{align-self:center;justify-self:auto;min-width:166px;height:44px;gap:11px;margin:0;padding:0 18px;border:0;border-radius:999px;background:#d0bcff;color:#32195e;font-size:11px;font-weight:700;box-shadow:0 4px 15px #0004;backdrop-filter:none}
+.spotify-open:hover{transform:translateY(-1px);border-color:transparent;background:#e1d3ff}
+.spotify-open:active{transform:scale(.98)}
+.spotify-open b{font-size:15px}
+.music-player-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #ffffff12;color:#8d8698;font-size:8px}
+.music-player-footer>span:first-child{display:flex;align-items:center;gap:7px;color:#bdb5c8;font-size:7px;font-weight:700;letter-spacing:1px}
+.music-player-footer>span:last-child{text-align:right}
+@media(max-width:850px){.profile-page{width:min(100% - 32px,650px)}.about-layout{grid-template-columns:1fr;max-width:560px;gap:18px}.profile-card{min-height:600px}.music-player{min-height:620px}.spotify-artwork{width:min(100%,300px)}}
+@media(max-width:600px){.profile-page{width:calc(100% - 28px)}.about-layout{padding:20px 0}.profile-card{min-height:600px}.music-player{min-height:570px;padding:20px;border-radius:25px}.music-player-heading h2{font-size:23px}.spotify-row{gap:15px}.spotify-artwork{width:min(100%,260px);border-radius:23px}.spotify-copy strong{font-size:21px}.music-player-footer{font-size:7px}}
+@media(max-width:360px){.music-player{min-height:530px;padding:17px}.spotify-artwork{width:min(100%,230px)}.music-player-footer{align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
 /* Media3-inspired Spotify now-playing surface */
