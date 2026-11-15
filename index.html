@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#6750a4" />
-    <meta name="description" content="A simple workspace, ready for your first project." />
-    <title>Dashboard — Daylight</title>
+    <meta name="description" content="Darisko's personal dashboard." />
+    <title>Dashboard — Darisko</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Flex:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,12 +22,12 @@
   <body>
     <main class="dashboard">
       <header class="topbar">
-        <a class="brand" href="#home" aria-label="Darisko dashboard">
+        <a class="brand" href="index.html" aria-label="Darisko dashboard">
           <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7.2 7.2 0 0 1-9-9Z"/><path d="M18 3v4m-2-2h4"/></svg></span>
           <span>Darisko</span>
         </a>
         <div class="topbar-right">
-          <span class="workspace-label">Personal workspace</span>
+          <span class="workspace-label">Personal space</span>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
             <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.4A8.5 8.5 0 0 1 8.6 3.9 8.7 8.7 0 1 0 20.1 15.4Z"/></svg>
             <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
@@ -37,11 +37,11 @@
 
       <section class="welcome" id="home">
         <p class="overline">YOUR DASHBOARD</p>
-        <h1>A clear space to begin.</h1>
-        <p class="subtitle">Keep the things you care about, all in one place.</p>
+        <h1>Your space, your way.</h1>
+        <p class="subtitle">Choose a place to start.</p>
       </section>
 
-      <section class="empty-card" aria-labelledby="emptyTitle">
+      <section class="empty-card home-card" aria-labelledby="emptyTitle">
         <div class="empty-illustration" aria-hidden="true">
           <span class="illustration-sun"></span>
           <span class="illustration-card card-back"></span>
@@ -50,39 +50,23 @@
           <span class="illustration-star star-two">✧</span>
         </div>
         <p class="overline">A FRESH START</p>
-        <h2 id="emptyTitle">Nothing here yet</h2>
-        <p class="empty-copy">Start with a project. Your dashboard will grow as you do.</p>
-        <button class="button button-filled" id="createProject" type="button">
-          <span class="button-icon" aria-hidden="true">+</span>
-          Create your first project
-        </button>
-      </section>
-
-      <section class="project-list" id="projectList" aria-live="polite" hidden>
-        <p class="overline">YOUR PROJECTS</p>
-        <div class="project-items" id="projectItems"></div>
-        <button class="button button-tonal" id="addAnother" type="button"><span class="button-icon" aria-hidden="true">+</span>Add a project</button>
+        <h2 id="emptyTitle">What would you like to see?</h2>
+        <p class="empty-copy">Your dashboard is ready when you are.</p>
+        <nav class="destination-list" aria-label="Dashboard sections">
+          <a class="destination-card" href="stats.html">
+            <span class="destination-icon stats-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h17M8 15v-4m5 4V7m5 8V9"/></svg></span>
+            <span class="destination-copy"><strong>Stats</strong><small>Your stats space</small></span>
+            <span class="destination-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="destination-card" href="about.html">
+            <span class="destination-icon about-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-3.4 3.2-5.5 7-5.5s6.5 2.1 7 5.5"/></svg></span>
+            <span class="destination-copy"><strong>About me</strong><small>A little about you</small></span>
+            <span class="destination-arrow" aria-hidden="true">→</span>
+          </a>
+        </nav>
       </section>
 
       <footer class="footer"><span>Made for a little more breathing room</span><span class="footer-sparkle" aria-hidden="true">✦</span></footer>
     </main>
-
-    <div class="modal-scrim" id="modalScrim" hidden>
-      <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
-        <button class="close-button" id="closeDialog" type="button" aria-label="Close dialog">×</button>
-        <p class="overline">MAKE IT YOURS</p>
-        <h2 id="dialogTitle">Create a project</h2>
-        <p class="dialog-copy">Give your next idea a place to live.</p>
-        <form id="projectForm">
-          <label for="projectName">Project name</label>
-          <input id="projectName" name="projectName" maxlength="60" placeholder="e.g. A new idea" autocomplete="off" required />
-          <div class="dialog-actions">
-            <button class="button button-tonal" id="cancelDialog" type="button">Cancel</button>
-            <button class="button button-filled" type="submit">Create project</button>
-          </div>
-        </form>
-      </section>
-    </div>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </body>
 </html>
