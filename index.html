@@ -1,74 +1,104 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- MENU BUTTON -->
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        ☰
-    </button>
-
-    <!-- DARK OVERLAY -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- SIDE MENU -->
-    <nav class="side-menu" id="sideMenu" aria-label="Main menu">
-
-        <div class="menu-header">
-            <h3>Menu</h3>
-            <button class="close-btn" id="closeBtn" aria-label="Close menu">
-                ×
-            </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6750a4" />
+    <meta name="description" content="A calm, personal dashboard for your day." />
+    <title>Overview — Daylight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#overview" aria-label="Daylight home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.25a8.75 8.75 0 1 0 8.75 8.75A7 7 0 0 1 12 3.25Z"/><path d="M17.5 3.5v4m-2-2h4"/></svg></span>
+          <span>daylight</span>
+        </a>
+        <div class="workspace-switcher"><div class="workspace-avatar">S</div><div class="workspace-copy"><strong>Studio North</strong><span>Personal workspace</span></div><span class="chevrons" aria-hidden="true">⌄</span></div>
+        <p class="nav-label">WORKSPACE</p>
+        <nav class="nav-list">
+          <a class="nav-item active" href="#overview"><span class="nav-icon" aria-hidden="true">◫</span>Overview</a>
+          <a class="nav-item" href="#projects"><span class="nav-icon" aria-hidden="true">▧</span>Projects<span class="nav-count">4</span></a>
+          <a class="nav-item" href="#tasks"><span class="nav-icon" aria-hidden="true">☷</span>My tasks<span class="nav-count">3</span></a>
+          <a class="nav-item" href="#calendar"><span class="nav-icon" aria-hidden="true">▦</span>Calendar</a>
+        </nav>
+        <div class="nav-section-title"><p class="nav-label">YOUR PROJECTS</p><button class="icon-button small" id="addProject" aria-label="Add a project" title="Add a project">+</button></div>
+        <nav class="nav-list project-nav" id="projectNav">
+          <a class="nav-item" href="#projects"><span class="project-dot dot-lilac"></span>Brand refresh</a>
+          <a class="nav-item" href="#projects"><span class="project-dot dot-peach"></span>Website launch</a>
+          <a class="nav-item" href="#projects"><span class="project-dot dot-mint"></span>Weekly newsletter</a>
+          <a class="nav-item" href="#projects"><span class="project-dot dot-blue"></span>Explore ideas</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="streak-card"><span class="streak-icon">✦</span><div><strong>You're on a roll!</strong><p>3 productive days in a row</p></div></div>
+          <button class="profile-button" id="profileButton"><span class="profile-avatar">D</span><span class="profile-copy"><strong>Darisko</strong><small>Free plan</small></span><span class="chevrons">···</span></button>
         </div>
+      </aside>
 
-        <div class="menu-links">
-            <a href="/">Home</a>
-            <a href="#about">About</a>
-            <a href="#status">Status</a>
-            <a href="#contact">Contact</a>
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <button class="icon-button menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-separator">/</span><strong>Overview</strong></div>
+          <div class="topbar-actions"><span class="today-label" id="todayLabel"></span><button class="icon-button notification-button" id="notifications" aria-label="Notifications">♧<i></i></button><button class="top-avatar" aria-label="Your profile">D</button></div>
+        </header>
+
+        <div class="page-content">
+          <section class="welcome-row">
+            <div><p class="eyebrow" id="greeting">YOUR SPACE, AT YOUR PACE</p><h1>A little progress goes a long way<span class="title-sparkle">✦</span></h1><p class="welcome-subtitle">Here’s what’s happening with your work today.</p></div>
+            <button class="button button-filled" id="newTask"><span class="button-plus">＋</span>New task</button>
+          </section>
+
+          <section class="stats-grid" aria-label="Your week at a glance">
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Tasks completed</span><span class="stat-icon icon-purple">✓</span></div><div class="stat-value">24<span class="stat-change positive">↗ 18%</span></div><p class="stat-note">Compared to last week</p><div class="mini-bars" aria-label="Weekly completion trend"><i style="--bar:34%"></i><i style="--bar:52%"></i><i style="--bar:44%"></i><i style="--bar:68%"></i><i style="--bar:58%"></i><i style="--bar:82%"></i><i class="bar-current" style="--bar:100%"></i></div></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Hours focused</span><span class="stat-icon icon-peach">◷</span></div><div class="stat-value">18.5<span class="stat-unit">hrs</span></div><p class="stat-note">Your goal is 25 hours</p><div class="progress-track"><span style="width:74%"></span></div><p class="progress-caption">74% of weekly goal</p></article>
+            <article class="stat-card"><div class="stat-top"><span class="stat-label">Active projects</span><span class="stat-icon icon-mint">◇</span></div><div class="stat-value">4<span class="stat-unit">projects</span></div><p class="stat-note">2 moving along nicely</p><div class="project-progress"><span class="progress-pill pill-purple">2 on track</span><span class="progress-pill pill-orange">1 needs love</span></div></article>
+            <article class="stat-card stat-highlight"><div class="stat-top"><span class="stat-label">Your focus streak</span><span class="stat-icon icon-yellow">✦</span></div><div class="stat-value">3<span class="stat-unit">days</span><span class="streak-flame">✺</span></div><p class="stat-note">Keep the momentum going!</p><div class="streak-days"><span>M</span><span>T</span><span>W</span><span class="day-today">T</span><span>F</span><span>S</span><span>S</span></div></article>
+          </section>
+
+          <section class="content-grid">
+            <article class="panel focus-panel" id="tasks">
+              <div class="panel-heading"><div><p class="eyebrow">MAKE IT COUNT</p><h2>Your focus today</h2></div><button class="text-button" id="viewTasks">View all <span>→</span></button></div>
+              <div class="focus-summary"><div class="focus-ring" aria-label="2 of 5 tasks completed"><span><strong id="completedCount">2</strong><small>of 5</small></span></div><div class="focus-summary-copy"><strong>You're finding your flow</strong><p>A couple more tasks and you're right on track.</p></div><span class="summary-sparkle">✳</span></div>
+              <div class="task-list" id="taskList">
+                <label class="task-row completed"><input type="checkbox" checked /><span class="task-check"></span><span class="task-copy"><strong>Review moodboard concepts</strong><small><span class="task-dot dot-lilac"></span>Brand refresh</small></span><span class="task-time">9:30 am</span></label>
+                <label class="task-row completed"><input type="checkbox" checked /><span class="task-check"></span><span class="task-copy"><strong>Reply to client feedback</strong><small><span class="task-dot dot-peach"></span>Website launch</small></span><span class="task-time">10:00 am</span></label>
+                <label class="task-row"><input type="checkbox" /><span class="task-check"></span><span class="task-copy"><strong>Sketch homepage layout</strong><small><span class="task-dot dot-peach"></span>Website launch</small></span><span class="task-time">11:30 am</span></label>
+                <label class="task-row"><input type="checkbox" /><span class="task-check"></span><span class="task-copy"><strong>Gather ideas for next issue</strong><small><span class="task-dot dot-mint"></span>Weekly newsletter</small></span><span class="task-time">2:00 pm</span></label>
+                <label class="task-row"><input type="checkbox" /><span class="task-check"></span><span class="task-copy"><strong>Take a proper lunch break</strong><small><span class="task-dot dot-blue"></span>For yourself</small></span><span class="task-time">12:30 pm</span></label>
+              </div>
+              <button class="add-task-button" id="addTaskInline"><span>＋</span> Add a task</button>
+            </article>
+
+            <article class="panel week-panel" id="calendar">
+              <div class="panel-heading"><div><p class="eyebrow">A GENTLE OVERVIEW</p><h2>Your week</h2></div><button class="icon-button calendar-nav" id="weekBack" aria-label="Previous week">‹</button><button class="icon-button calendar-nav" id="weekForward" aria-label="Next week">›</button></div>
+              <div class="week-chart" id="weekChart" aria-label="Focus time by day"></div>
+              <div class="chart-legend"><span><i></i>Focus time</span><span class="chart-total"><strong>18.5</strong> hrs this week</span></div>
+              <div class="week-divider"></div>
+              <div class="next-up-heading"><strong>Coming up</strong><a href="#calendar">See calendar <span>→</span></a></div>
+              <div class="upcoming-event"><span class="event-date"><strong>18</strong><small>NOV</small></span><span class="event-mark event-purple"></span><span class="event-copy"><strong>Brand direction review</strong><small>Studio sync · 10:30 am</small></span><span class="event-people"><i>D</i><i>M</i><i>+2</i></span></div>
+              <div class="upcoming-event"><span class="event-date"><strong>20</strong><small>NOV</small></span><span class="event-mark event-peach"></span><span class="event-copy"><strong>Newsletter draft due</strong><small>Weekly newsletter · 4:00 pm</small></span><span class="event-tag">THU</span></div>
+            </article>
+          </section>
+
+          <section class="panel projects-panel" id="projects">
+            <div class="panel-heading"><div><p class="eyebrow">SMALL STEPS, BIG THINGS</p><h2>In progress</h2></div><button class="text-button" id="allProjects">All projects <span>→</span></button></div>
+            <div class="projects-grid">
+              <article class="project-card"><div class="project-card-top"><span class="project-icon project-icon-lilac">✿</span><span class="status status-good"><i></i>On track</span><button class="more-button" aria-label="More options for Brand refresh">···</button></div><h3>Brand refresh</h3><p>Finding a fresh look for the next chapter.</p><div class="project-meta"><div class="avatar-stack"><i>D</i><i>M</i><i>A</i></div><span>6 of 8 tasks</span></div><div class="project-track"><i style="width:75%"></i></div></article>
+              <article class="project-card"><div class="project-card-top"><span class="project-icon project-icon-peach">✳</span><span class="status status-watch"><i></i>Needs love</span><button class="more-button" aria-label="More options for Website launch">···</button></div><h3>Website launch</h3><p>A little corner of the internet to call ours.</p><div class="project-meta"><div class="avatar-stack"><i>D</i><i>A</i></div><span>4 of 9 tasks</span></div><div class="project-track peach-track"><i style="width:44%"></i></div></article>
+              <article class="project-card"><div class="project-card-top"><span class="project-icon project-icon-mint">❋</span><span class="status status-good"><i></i>On track</span><button class="more-button" aria-label="More options for Weekly newsletter">···</button></div><h3>Weekly newsletter</h3><p>Notes, ideas and little things worth sharing.</p><div class="project-meta"><div class="avatar-stack"><i>D</i><i>M</i></div><span>7 of 10 tasks</span></div><div class="project-track mint-track"><i style="width:70%"></i></div></article>
+              <button class="project-card new-project" id="newProject"><span class="new-project-icon">＋</span><strong>Make room for an idea</strong><small>Start a new project</small></button>
+            </div>
+          </section>
+          <footer class="page-footer"><span>Made for the way you work <b>✦</b></span><span id="footerDate"></span></footer>
         </div>
-
-    </nav>
-
-    <!-- LOADING SCREEN -->
-    <div class="loader-container">
-        <div class="spinner"></div>
-        <h2>In Progress...</h2>
+      </main>
     </div>
-
-    <!-- MENU SCRIPT -->
-    <script>
-        const menuBtn = document.getElementById("menuBtn");
-        const closeBtn = document.getElementById("closeBtn");
-        const sideMenu = document.getElementById("sideMenu");
-        const overlay = document.getElementById("overlay");
-
-        function openMenu() {
-            sideMenu.classList.add("active");
-            overlay.classList.add("active");
-        }
-
-        function closeMenu() {
-            sideMenu.classList.remove("active");
-            overlay.classList.remove("active");
-        }
-
-        menuBtn.addEventListener("click", openMenu);
-        closeBtn.addEventListener("click", closeMenu);
-        overlay.addEventListener("click", closeMenu);
-
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Escape") {
-                closeMenu();
-            }
-        });
-    </script>
-
-</body>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-backdrop" id="modalBackdrop" hidden><section class="quick-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="icon-button modal-close" id="modalClose" aria-label="Close">×</button><p class="eyebrow">A SMALL NEXT STEP</p><h2 id="modalTitle">Add a task</h2><label class="input-label" for="taskInput">What would you like to do?</label><input class="task-input" id="taskInput" maxlength="80" placeholder="Give it a name…" /><div class="modal-actions"><button class="button button-tonal" id="modalCancel">Cancel</button><button class="button button-filled" id="modalSave">Add task</button></div></section></div>
+  </body>
 </html>
