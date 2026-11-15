@@ -26,6 +26,7 @@ const profileAvatar = document.querySelector("#profileAvatar");
 const discordAvatar = document.querySelector("#discordAvatar");
 const avatarFallback = document.querySelector("#avatarFallback");
 const avatarWrap = document.querySelector(".avatar-wrap");
+const musicSquigglePath = document.querySelector("#musicSquigglePath");
 
 let currentSocket = null;
 let heartbeatTimer = null;
@@ -41,6 +42,26 @@ function formatTime(milliseconds) {
   return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
+function createMusicSquiggle() {
+  const pointCount = 160;
+  const points = Array.from({ length: pointCount }, (_, index) => {
+    const angle = (index / pointCount) * Math.PI * 2 - Math.PI / 2;
+    const radius = 75 + 3.2 * Math.sin(angle * 17 + 0.2) + 1.2 * Math.sin(angle * 31);
+    return { x: 90 + Math.cos(angle) * radius, y: 90 + Math.sin(angle) * radius };
+  });
+  let path = `M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
+  for (let index = 0; index < pointCount; index += 1) {
+    const p0 = points[(index - 1 + pointCount) % pointCount];
+    const p1 = points[index];
+    const p2 = points[(index + 1) % pointCount];
+    const p3 = points[(index + 2) % pointCount];
+    const control1 = { x: p1.x + (p2.x - p0.x) / 6, y: p1.y + (p2.y - p0.y) / 6 };
+    const control2 = { x: p2.x - (p3.x - p1.x) / 6, y: p2.y - (p3.y - p1.y) / 6 };
+    path += ` C ${control1.x.toFixed(2)} ${control1.y.toFixed(2)} ${control2.x.toFixed(2)} ${control2.y.toFixed(2)} ${p2.x.toFixed(2)} ${p2.y.toFixed(2)}`;
+  }
+  musicSquigglePath.setAttribute("d", `${path} Z`);
+}
+
 function updateSpotifyProgress() {
   if (!activeSpotifyTrack) return;
   const start = Number(activeSpotifyTrack.timestamps?.start);
@@ -49,7 +70,7 @@ function updateSpotifyProgress() {
   if (!Number.isFinite(start) || !Number.isFinite(end) || start <= 0 || duration <= 0) {
     spotifyProgressTrack.classList.add("indeterminate");
     spotifyProgressTrack.removeAttribute("aria-valuenow");
-    spotifyProgressFill.style.width = "34%";
+    spotifyProgressFill.style.removeProperty("stroke-dasharray");
     spotifyElapsed.textContent = "--:--";
     spotifyDuration.textContent = "--:--";
     return;
@@ -59,7 +80,7 @@ function updateSpotifyProgress() {
   const percentage = Math.min(100, (elapsed / duration) * 100);
   spotifyProgressTrack.classList.remove("indeterminate");
   spotifyProgressTrack.setAttribute("aria-valuenow", String(Math.round(percentage)));
-  spotifyProgressFill.style.width = `${percentage}%`;
+  spotifyProgressFill.style.strokeDasharray = `${percentage} 100`;
   spotifyElapsed.textContent = formatTime(elapsed);
   spotifyDuration.textContent = formatTime(duration);
 }
@@ -71,7 +92,7 @@ function stopSpotifyProgress() {
   avatarWrap.classList.remove("is-listening");
   spotifyProgressTrack.classList.remove("indeterminate");
   spotifyProgressTrack.setAttribute("aria-valuenow", "0");
-  spotifyProgressFill.style.width = "0%";
+  spotifyProgressFill.style.strokeDasharray = "0 100";
   spotifyElapsed.textContent = "0:00";
   spotifyDuration.textContent = "--:--";
 }
@@ -347,4 +368,5 @@ window.addEventListener("pagehide", () => {
   if (currentSocket) currentSocket.close();
 });
 
+createMusicSquiggle();
 loadSnapshot().finally(connectSocket);
