@@ -18,6 +18,9 @@ const spotifyArt = document.querySelector("#spotifyArt");
 const spotifySong = document.querySelector("#spotifySong");
 const spotifyArtist = document.querySelector("#spotifyArtist");
 const spotifyOpen = document.querySelector("#spotifyOpen");
+const profileAvatar = document.querySelector("#profileAvatar");
+const discordAvatar = document.querySelector("#discordAvatar");
+const avatarFallback = document.querySelector("#avatarFallback");
 
 let currentSocket = null;
 let heartbeatTimer = null;
@@ -109,6 +112,38 @@ function displaySpotify(presence) {
   }
 }
 
+function useAvatarFallback() {
+  discordAvatar.onload = null;
+  discordAvatar.onerror = null;
+  discordAvatar.hidden = true;
+  discordAvatar.removeAttribute("src");
+  avatarFallback.hidden = false;
+  profileAvatar.setAttribute("aria-label", "Darisko profile picture");
+}
+
+function displayAvatar(presence) {
+  const user = presence.discord_user;
+  const userId = String(user?.id || "");
+  const avatarHash = String(user?.avatar || "");
+  if (userId !== DISCORD_USER_ID || !/^(?:a_)?[a-f0-9]{6,64}$/i.test(avatarHash)) {
+    useAvatarFallback();
+    return;
+  }
+
+  const format = avatarHash.startsWith("a_") ? "gif" : "png";
+  const imageUrl = `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}.${format}?size=256`;
+  discordAvatar.hidden = true;
+  avatarFallback.hidden = false;
+  discordAvatar.onload = () => {
+    if (discordAvatar.src !== imageUrl) return;
+    discordAvatar.hidden = false;
+    avatarFallback.hidden = true;
+    profileAvatar.setAttribute("aria-label", "Darisko Discord profile picture");
+  };
+  discordAvatar.onerror = useAvatarFallback;
+  discordAvatar.src = imageUrl;
+}
+
 function displayPresence(presence, isLive) {
   const statuses = {
     online: "Online",
@@ -117,6 +152,7 @@ function displayPresence(presence, isLive) {
     offline: "Offline",
   };
   const status = String(presence.discord_status || "").toLowerCase();
+  displayAvatar(presence);
   if (!statuses[status]) {
     showUnavailable("Lanyard returned an unknown Discord status.");
     return;
