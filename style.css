@@ -13,7 +13,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
+
+/* LOADING SCREEN */
 
 .loader-container {
     text-align: center;
@@ -39,4 +42,100 @@ h2 {
     font-size: 20px;
     font-weight: 500;
     color: #fff;
+}
+
+/* MENU BUTTON */
+
+.menu-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* DARK OVERLAY */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* SIDE MENU */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    max-width: 85%;
+    height: 100vh;
+    background: #151515;
+    padding: 30px 25px;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: 1002;
+    border-right: 1px solid #292929;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+/* MENU HEADER */
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.menu-header h3 {
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* MENU LINKS */
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-links a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 7px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.menu-links a:hover {
+    background: #292929;
+    color: white;
 }

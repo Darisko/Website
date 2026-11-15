@@ -9,10 +9,66 @@
 </head>
 <body>
 
+    <!-- MENU BUTTON -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        ☰
+    </button>
+
+    <!-- DARK OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- SIDE MENU -->
+    <nav class="side-menu" id="sideMenu" aria-label="Main menu">
+
+        <div class="menu-header">
+            <h3>Menu</h3>
+            <button class="close-btn" id="closeBtn" aria-label="Close menu">
+                ×
+            </button>
+        </div>
+
+        <div class="menu-links">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#status">Status</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+    <!-- LOADING SCREEN -->
     <div class="loader-container">
         <div class="spinner"></div>
         <h2>In Progress...</h2>
     </div>
+
+    <!-- MENU SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const closeBtn = document.getElementById("closeBtn");
+        const sideMenu = document.getElementById("sideMenu");
+        const overlay = document.getElementById("overlay");
+
+        function openMenu() {
+            sideMenu.classList.add("active");
+            overlay.classList.add("active");
+        }
+
+        function closeMenu() {
+            sideMenu.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+
+        menuBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+        overlay.addEventListener("click", closeMenu);
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
 
 </body>
 </html>
