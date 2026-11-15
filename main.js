@@ -6,7 +6,18 @@ const modalScrim = document.querySelector("#modalScrim");
 const projectName = document.querySelector("#projectName");
 const projectForm = document.querySelector("#projectForm");
 const toast = document.querySelector("#toast");
+const themeToggle = document.querySelector("#themeToggle");
 let toastTimer;
+
+function updateThemeButton() {
+  const isDark = document.documentElement.dataset.theme === "dark";
+  const nextTheme = isDark ? "light" : "dark";
+  const actionLabel = `Switch to ${nextTheme} mode`;
+  themeToggle.setAttribute("aria-label", actionLabel);
+  themeToggle.setAttribute("title", actionLabel);
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", isDark ? "#19151f" : "#6750a4");
+}
 
 function showToast(message) {
   toast.textContent = message;
@@ -59,6 +70,16 @@ document.querySelector("#createProject").addEventListener("click", openDialog);
 document.querySelector("#addAnother").addEventListener("click", openDialog);
 document.querySelector("#closeDialog").addEventListener("click", closeDialog);
 document.querySelector("#cancelDialog").addEventListener("click", closeDialog);
+themeToggle.addEventListener("click", () => {
+  const isDark = document.documentElement.dataset.theme !== "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  try {
+    localStorage.setItem("daylight-theme", isDark ? "dark" : "light");
+  } catch {
+    // Keep the selected theme for this page even if storage is unavailable.
+  }
+  updateThemeButton();
+});
 modalScrim.addEventListener("click", (event) => {
   if (event.target === modalScrim) closeDialog();
 });
@@ -80,4 +101,5 @@ projectForm.addEventListener("submit", (event) => {
   showToast("Your project is ready.");
 });
 
+updateThemeButton();
 renderProjects();

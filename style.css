@@ -3,3 +3,44 @@
 @media(max-width:650px){.dashboard{width:calc(100% - 24px);min-height:calc(100vh - 24px);margin:12px auto;padding:0 20px;border-radius:23px}.topbar{height:66px}.workspace-label{max-width:130px;font-size:10px}.topbar-right{gap:10px}.welcome{padding:43px 0 23px}.welcome h1{max-width:420px;font-size:32px}.subtitle{max-width:360px;font-size:13px}.empty-card{min-height:370px;padding:30px 18px;border-radius:20px}.empty-card h2{font-size:21px}.empty-copy{font-size:12px}.footer{font-size:10px}}
 @media(max-width:380px){.dashboard{padding:0 14px}.brand{font-size:17px}.welcome h1{font-size:28px}.empty-card{min-height:345px}.project-items{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+.theme-toggle{width:36px;height:36px;display:grid;place-items:center;padding:0;border:1px solid #e8e2ed;border-radius:50%;background:transparent;color:#635b6b;cursor:pointer;transition:background .18s,border-color .18s,color .18s}.theme-toggle:hover{background:#f0ecf4}.theme-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.theme-toggle .sun-icon{display:none}
+
+:root[data-theme="dark"]{color-scheme:dark;--primary:#d0bcff;--on-primary:#38275d;--surface:#211f26;--surface-soft:#292630;--surface-low:#25232b;--outline:#48454f;--muted:#c9c3ce;--ink:#e6e0e9;--shadow:0 18px 54px rgba(0,0,0,.34)}
+:root[data-theme="dark"] body{background:radial-gradient(ellipse at 16% 5%,#42335b 0,transparent 38%),radial-gradient(ellipse at 100% 100%,#2c2140 0,transparent 48%),#19151f;color:var(--ink)}
+:root[data-theme="dark"] .dashboard{border-color:#413b49;background:#211f26}
+:root[data-theme="dark"] .topbar{border-color:#393640}
+:root[data-theme="dark"] .brand,:root[data-theme="dark"] .welcome h1,:root[data-theme="dark"] .empty-card h2,:root[data-theme="dark"] .dialog h2{color:#f0ebf4}
+:root[data-theme="dark"] .brand-icon{background:#d0bcff;color:#38275d}
+:root[data-theme="dark"] .workspace-label,:root[data-theme="dark"] .subtitle,:root[data-theme="dark"] .empty-copy,:root[data-theme="dark"] .dialog-copy{color:#c4bdca}
+:root[data-theme="dark"] .profile{background:#4a4058;color:#f0e6ff}
+:root[data-theme="dark"] .overline{color:#b9a8d1}
+:root[data-theme="dark"] .empty-card{border-color:#413b49;background:linear-gradient(145deg,#292630 10%,#24212b 100%)}
+:root[data-theme="dark"] .empty-card:before{background:#332a40}
+:root[data-theme="dark"] .empty-card:after{background:#2d2934}
+:root[data-theme="dark"] .illustration-sun{background:#3b304b}
+:root[data-theme="dark"] .illustration-card{border-color:#51475e;background:#292630;box-shadow:0 5px 14px #0002}
+:root[data-theme="dark"] .card-back{background:#302a39}
+:root[data-theme="dark"] .card-front i{background:#484050}
+:root[data-theme="dark"] .card-front i:first-child{background:#b19acf}
+:root[data-theme="dark"] .illustration-star,:root[data-theme="dark"] .footer-sparkle{color:#ceb8ef}
+:root[data-theme="dark"] .button-filled{background:#d0bcff;color:#38275d;box-shadow:none}
+:root[data-theme="dark"] .button-filled:hover{background:#e0d2ff;box-shadow:0 3px 10px #0003}
+:root[data-theme="dark"] .button-tonal{background:#494153;color:#e6dcf5}
+:root[data-theme="dark"] .button-tonal:hover{background:#554b60}
+:root[data-theme="dark"] .footer{color:#aaa3b0}
+:root[data-theme="dark"] .project-item{border-color:#403b46;background:#292630}
+:root[data-theme="dark"] .project-item-icon{background:#40364e;color:#d0bcff}
+:root[data-theme="dark"] .project-item-name{color:#e8e2ec}
+:root[data-theme="dark"] .modal-scrim{background:#0009}
+:root[data-theme="dark"] .dialog{border-color:#48434f;background:#26232c;box-shadow:0 24px 70px #0007}
+:root[data-theme="dark"] .close-button{color:#d0cad5}
+:root[data-theme="dark"] .close-button:hover{background:#39343f}
+:root[data-theme="dark"] .dialog label{color:#d4ced9}
+:root[data-theme="dark"] .dialog input{border-color:#5b5562;background:#1d1b22;color:#f0ebf4}
+:root[data-theme="dark"] .dialog input::placeholder{color:#928b98}
+:root[data-theme="dark"] .dialog input:focus{border-color:#d0bcff;outline-color:#d0bcff55}
+:root[data-theme="dark"] .theme-toggle{border-color:#514b58;color:#e6daff}
+:root[data-theme="dark"] .theme-toggle:hover{background:#35303d}
+:root[data-theme="dark"] .theme-toggle .moon-icon{display:none}
+:root[data-theme="dark"] .theme-toggle .sun-icon{display:block}
