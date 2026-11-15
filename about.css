@@ -13,6 +13,37 @@
 .profile-nav .profile-menu a.current{background:#d0bcff;color:#381e72;font-weight:600;box-shadow:0 1px 3px #0003}
 @media(max-width:600px){.profile-nav{height:auto;min-height:68px;flex-wrap:wrap;gap:10px;padding:10px 0}.profile-menu{order:3;width:100%;justify-content:center}.profile-nav .profile-menu a{min-height:35px;flex:1;max-width:140px;padding:0 9px;font-size:10px}}
 @media(max-width:360px){.profile-menu a svg{width:14px;height:14px}.profile-nav .profile-menu a{gap:5px;padding:0 6px}}
+
+/* PixelPlayer-inspired expressive now-playing card */
+.discord-presence{gap:11px}
+.spotify-row{position:relative;isolation:isolate;min-width:0;display:grid;grid-template-columns:78px minmax(0,1fr);align-items:center;gap:6px 14px;margin:0;padding:15px;overflow:hidden;border:1px solid #ffffff18;border-radius:22px;background:radial-gradient(ellipse at 84% 4%,#9771d522,transparent 52%),linear-gradient(145deg,#201c2a,#14131b 80%);box-shadow:0 8px 26px #0003,inset 0 1px #ffffff12;transition:border-color .25s,background .25s,box-shadow .25s}
+.spotify-row:before{position:absolute;z-index:-2;inset:-35px;background-image:linear-gradient(110deg,#100e18e8 8%,#15121ddc 48%,#17131dd9),var(--spotify-art-bg,radial-gradient(ellipse at 88% 8%,#7752b932,transparent 55%));background-position:center;background-size:cover;content:"";filter:blur(24px) saturate(1.35);opacity:.72;transform:scale(1.1);transition:opacity .4s}
+.spotify-row:after{position:absolute;z-index:-1;inset:0;border-radius:inherit;background:linear-gradient(135deg,#ffffff08,transparent 42%,#b48cff08);content:"";pointer-events:none}
+.spotify-row[data-state="playing"]{border-color:#d6c2ff3d;box-shadow:0 10px 30px #0004,0 0 30px #9c6dff11,inset 0 1px #ffffff16}
+.spotify-row[data-state="playing"]:before{opacity:.95}
+.spotify-artwork{position:relative;grid-column:1;grid-row:1 / span 3;width:78px;height:78px;align-self:center;overflow:hidden;border:1px solid #ffffff32;border-radius:18px;background:linear-gradient(145deg,#393145,#211d2b);box-shadow:0 8px 22px #0006,0 1px #ffffff30 inset}
+.spotify-art{display:block;width:100%;height:100%;margin:0;border:0;border-radius:inherit;background:transparent;object-fit:cover}
+.spotify-art-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#d7c2ff;background:radial-gradient(circle at 70% 18%,#d4b5ff35,transparent 48%),linear-gradient(145deg,#41364f,#211d2a)}
+.spotify-art-placeholder svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 8px #c4a2ff90)}
+.spotify-art-shine{position:absolute;right:7px;bottom:6px;color:#fff9;font-size:12px;text-shadow:0 0 8px #fff;pointer-events:none}
+.spotify-copy{position:relative;z-index:1;grid-column:2;align-self:center;gap:4px;min-width:0}
+.spotify-copy small{overflow:hidden;color:#d4c0ff;font-size:8px;font-weight:700;letter-spacing:1.2px;text-overflow:ellipsis;white-space:nowrap}
+.spotify-row[data-state="playing"] .spotify-copy small{color:#c8b0ff}
+.spotify-copy strong{overflow:hidden;color:#fcfaff;font-size:14px;font-weight:600;letter-spacing:-.2px;text-overflow:ellipsis;white-space:nowrap}
+.spotify-copy>#spotifyArtist,.spotify-copy>#spotifyAlbum{overflow:hidden;color:#c3bdcc;font-size:10px;line-height:1.35;text-overflow:ellipsis;white-space:nowrap}
+.spotify-copy>#spotifyAlbum{color:#918a9e;font-size:9px}
+.spotify-copy>.spotify-progress{display:grid;gap:5px;margin-top:7px}
+.spotify-progress .spotify-wave{height:15px}
+.spotify-wave .wave-track{stroke:#f8f0ff3b;stroke-width:1.45}
+.spotify-wave .wave-fill{stroke:url(#musicWaveGradient);stroke-width:2.8;filter:drop-shadow(0 0 3px #a2edff9c)}
+.spotify-times{color:#b4adbf;font-size:8px}
+.spotify-open{position:relative;z-index:1;grid-column:2;justify-self:start;width:auto;height:32px;display:flex;align-items:center;justify-content:center;gap:9px;margin:5px 0 0;padding:0 13px;border:1px solid #ffffff24;border-radius:999px;background:#ffffff12;color:#f1e9ff;font-size:9px;font-weight:600;letter-spacing:.1px;backdrop-filter:blur(12px);transition:transform .18s,background .18s,border-color .18s}
+.spotify-open:hover{transform:translateY(-1px);border-color:#ddc5ff70;background:#ffffff1d}
+.spotify-open:active{transform:scale(.98)}
+.spotify-open b{font-size:13px;font-weight:400}
+.spotify-art[hidden],.spotify-art-placeholder[hidden],.spotify-progress[hidden],.spotify-open[hidden]{display:none}
+@media(max-width:600px){.spotify-row{grid-template-columns:66px minmax(0,1fr);gap:6px 11px;padding:12px 11px;border-radius:19px}.spotify-artwork{width:66px;height:66px;border-radius:16px}.spotify-copy strong{font-size:13px}.spotify-copy>#spotifyArtist{font-size:9px}.spotify-open{height:30px}}
+@media(max-width:360px){.spotify-row{grid-template-columns:56px minmax(0,1fr);column-gap:9px;padding:10px}.spotify-artwork{width:56px;height:56px;border-radius:14px}.spotify-copy strong{font-size:12px}.spotify-open{height:28px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
 /* Media3-inspired Spotify now-playing surface */

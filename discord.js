@@ -19,6 +19,7 @@ const spotifyArt = document.querySelector("#spotifyArt");
 const spotifyEyebrow = document.querySelector("#spotifyEyebrow");
 const spotifySong = document.querySelector("#spotifySong");
 const spotifyArtist = document.querySelector("#spotifyArtist");
+const spotifyAlbum = document.querySelector("#spotifyAlbum");
 const spotifyOpen = document.querySelector("#spotifyOpen");
 const spotifyProgress = document.querySelector("#spotifyProgress");
 const spotifyProgressTrack = document.querySelector("#spotifyProgressTrack");
@@ -107,6 +108,9 @@ function setSpotifyEmpty(state, eyebrow, title, description) {
   spotifySong.textContent = title;
   spotifyArtist.textContent = description;
   spotifyArtist.hidden = false;
+  spotifyAlbum.textContent = "";
+  spotifyAlbum.hidden = true;
+  spotifyRow.style.removeProperty("--spotify-art-bg");
   spotifyPlaceholder.hidden = false;
   spotifyArt.hidden = true;
   spotifyProgress.hidden = true;
@@ -165,6 +169,8 @@ function displaySpotify(presence) {
   spotifySong.textContent = track.song;
   spotifyArtist.textContent = track.artist || "";
   spotifyArtist.hidden = !track.artist;
+  spotifyAlbum.textContent = track.album || "";
+  spotifyAlbum.hidden = !track.album;
   spotifyRow.hidden = false;
   spotifyProgress.hidden = false;
   spotifyPlaceholder.hidden = false;
@@ -186,11 +192,14 @@ function displaySpotify(presence) {
     spotifyArt.onerror = () => {
       spotifyArt.hidden = true;
       spotifyPlaceholder.hidden = false;
+      spotifyRow.style.removeProperty("--spotify-art-bg");
     };
     spotifyArt.src = safeArtUrl;
+    spotifyRow.style.setProperty("--spotify-art-bg", `url("${safeArtUrl}")`);
   } else {
     spotifyArt.hidden = true;
     spotifyArt.removeAttribute("src");
+    spotifyRow.style.removeProperty("--spotify-art-bg");
   }
 
   const trackId = String(track.track_id || "");
