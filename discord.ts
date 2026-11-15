@@ -14,10 +14,13 @@ const activityLabel = document.querySelector("#activityLabel");
 const activityName = document.querySelector("#activityName");
 const activityDetails = document.querySelector("#activityDetails");
 const spotifyRow = document.querySelector("#spotifyRow");
+const spotifyPlaceholder = document.querySelector("#spotifyPlaceholder");
 const spotifyArt = document.querySelector("#spotifyArt");
+const spotifyEyebrow = document.querySelector("#spotifyEyebrow");
 const spotifySong = document.querySelector("#spotifySong");
 const spotifyArtist = document.querySelector("#spotifyArtist");
 const spotifyOpen = document.querySelector("#spotifyOpen");
+const spotifyProgress = document.querySelector("#spotifyProgress");
 const spotifyProgressTrack = document.querySelector("#spotifyProgressTrack");
 const spotifyProgressFill = document.querySelector("#spotifyProgressFill");
 const spotifyElapsed = document.querySelector("#spotifyElapsed");
@@ -97,11 +100,17 @@ function stopSpotifyProgress() {
   spotifyDuration.textContent = "--:--";
 }
 
-function hideDetails() {
-  activityRow.hidden = true;
-  spotifyRow.hidden = true;
-  spotifyOpen.hidden = true;
+function setSpotifyEmpty(state, eyebrow, title, description) {
+  spotifyRow.dataset.state = state;
+  spotifyRow.hidden = false;
+  spotifyEyebrow.textContent = eyebrow;
+  spotifySong.textContent = title;
+  spotifyArtist.textContent = description;
+  spotifyArtist.hidden = false;
+  spotifyPlaceholder.hidden = false;
   spotifyArt.hidden = true;
+  spotifyProgress.hidden = true;
+  spotifyOpen.hidden = true;
   stopSpotifyProgress();
 }
 
@@ -114,7 +123,8 @@ function showUnavailable(message, { needsOptIn = false, connection = "UNAVAILABL
   hint.textContent = message;
   hint.hidden = false;
   joinLink.hidden = !needsOptIn;
-  hideDetails();
+  activityRow.hidden = true;
+  setSpotifyEmpty("unavailable", "SPOTIFY UNAVAILABLE", "Listening status unavailable", needsOptIn ? "Join Lanyard to share your presence." : "Live Discord data will return when the connection is restored.");
 }
 
 function displayActivity(presence) {
@@ -142,13 +152,12 @@ function displayActivity(presence) {
 function displaySpotify(presence) {
   const track = presence.listening_to_spotify && presence.spotify ? presence.spotify : null;
   if (!track || !track.song) {
-    spotifyRow.hidden = true;
-    spotifyOpen.hidden = true;
-    spotifyArt.hidden = true;
-    stopSpotifyProgress();
+    setSpotifyEmpty("idle", "SPOTIFY", "Nothing playing", "Your current track will appear here.");
     return;
   }
 
+  spotifyRow.dataset.state = "playing";
+  spotifyEyebrow.textContent = "NOW PLAYING";
   activeSpotifyTrack = track;
   avatarWrap.classList.add("is-listening");
   updateSpotifyProgress();
@@ -157,6 +166,9 @@ function displaySpotify(presence) {
   spotifyArtist.textContent = track.artist || "";
   spotifyArtist.hidden = !track.artist;
   spotifyRow.hidden = false;
+  spotifyProgress.hidden = false;
+  spotifyPlaceholder.hidden = false;
+  spotifyOpen.hidden = true;
 
   const artUrl = track.album_art_url;
   let safeArtUrl = "";
@@ -170,7 +182,11 @@ function displaySpotify(presence) {
   if (safeArtUrl) {
     spotifyArt.alt = `Album art for ${track.song}`;
     spotifyArt.hidden = false;
-    spotifyArt.onerror = () => { spotifyArt.hidden = true; };
+    spotifyPlaceholder.hidden = true;
+    spotifyArt.onerror = () => {
+      spotifyArt.hidden = true;
+      spotifyPlaceholder.hidden = false;
+    };
     spotifyArt.src = safeArtUrl;
   } else {
     spotifyArt.hidden = true;
@@ -181,8 +197,6 @@ function displaySpotify(presence) {
   if (/^[a-zA-Z0-9]{10,30}$/.test(trackId)) {
     spotifyOpen.href = `https://open.spotify.com/track/${encodeURIComponent(trackId)}`;
     spotifyOpen.hidden = false;
-  } else {
-    spotifyOpen.hidden = true;
   }
 }
 
@@ -242,7 +256,8 @@ function displayPresence(presence, isLive) {
   hint.hidden = status !== "offline";
 
   if (status === "offline") {
-    hideDetails();
+    activityRow.hidden = true;
+    setSpotifyEmpty("offline", "DISCORD OFFLINE", "Spotify is not active", "Listening details will appear when you're active.");
     return;
   }
 

@@ -4,6 +4,28 @@
 @media(max-width:360px){.profile-nav nav a{padding:8px 7px;font-size:9px}.profile-brand{font-size:8px;letter-spacing:1px}.profile-card{padding-right:13px;padding-left:13px}.profile-index{font-size:7px}.profile-topline{font-size:7px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 
+/* Media3-inspired Spotify now-playing surface */
+.spotify-row{align-items:center;gap:12px;margin-top:2px;padding:12px;border:1px solid #ffffff12;border-radius:16px;background:linear-gradient(125deg,#ffffff0b,#ffffff04 62%,#a882ff09);box-shadow:inset 0 1px #ffffff08;transition:border-color .25s,background .25s}
+.spotify-row[data-state="playing"]{border-color:#9beaff30;background:linear-gradient(125deg,#72dfff0c,#ffffff05 48%,#a882ff12)}
+.spotify-artwork{position:relative;width:52px;height:52px;flex:0 0 auto;overflow:hidden;border:1px solid #ffffff19;border-radius:13px;background:linear-gradient(145deg,#292233,#15131b);box-shadow:0 5px 16px #0005}
+.spotify-art{display:block;width:100%;height:100%;margin:0;border:0;border-radius:inherit;background:transparent;object-fit:cover}
+.spotify-art-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#b99aff;background:radial-gradient(circle at 70% 18%,#8d62c52c,transparent 48%),linear-gradient(145deg,#252033,#14131a)}
+.spotify-art-placeholder svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 7px #a783ff62)}
+.spotify-art-placeholder[hidden],.spotify-art[hidden],.spotify-progress[hidden]{display:none}
+.spotify-copy{align-self:center;gap:4px}
+.spotify-copy small{color:#a994cf;font-size:7px;letter-spacing:1.35px}
+.spotify-row[data-state="playing"] .spotify-copy small{color:#87dfc0}
+.spotify-copy strong{font-size:11px;line-height:1.25}
+.spotify-copy>#spotifyArtist{font-size:9px;line-height:1.35}
+.spotify-copy>.spotify-progress{display:grid;gap:4px;margin-top:5px}
+.spotify-progress .spotify-wave{width:100%;height:13px}
+.spotify-open{width:auto;height:30px;display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:0 10px;border:1px solid #ffffff16;border-radius:999px;background:#ffffff08;color:#d7c7ff;font-size:8px;font-weight:600;white-space:nowrap}
+.spotify-open b{font-size:12px;font-weight:400}
+.spotify-open:hover{border-color:#b99aff55;background:#a783ff19}
+.spotify-open[hidden]{display:none}
+@media(max-width:600px){.spotify-row{gap:9px;padding:10px}.spotify-artwork{width:46px;height:46px}.spotify-open{gap:5px;padding:0 8px;font-size:7px}}
+@media(max-width:360px){.spotify-open span{display:none}.spotify-open{width:28px;padding:0}}
+
 .discord-presence{width:100%;display:grid;gap:9px;margin:19px auto 0;padding:11px;border:1px solid #ffffff13;border-radius:15px;background:linear-gradient(120deg,#ffffff08,#ffffff03);text-align:left}.presence-heading{min-height:20px;display:flex;align-items:center;gap:8px}.presence-state-dot{width:8px;height:8px;flex:0 0 auto;border:1px solid #ffffff22;border-radius:50%;background:#77717e;box-shadow:0 0 10px #77717e55}.presence-status{color:#e9e5ef;font-size:10px;font-weight:600}.presence-live{margin-left:auto;color:#8d8697;font-size:7px;font-weight:700;letter-spacing:1px}.presence-live:before{display:inline-block;width:5px;height:5px;margin:0 5px 1px 0;border-radius:50%;background:currentColor;content:""}.discord-presence[data-state="online"] .presence-state-dot{background:#5ddb9a;box-shadow:0 0 11px #4cdb8a88}.discord-presence[data-state="idle"] .presence-state-dot{background:#f3c96b;box-shadow:0 0 11px #f3c96b77}.discord-presence[data-state="dnd"] .presence-state-dot{background:#ed727c;box-shadow:0 0 11px #ed727c77}.discord-presence[data-state="offline"] .presence-state-dot{background:#73717c;box-shadow:none}.discord-presence[data-state="unavailable"] .presence-state-dot{background:#8e8798;box-shadow:none}.discord-presence[data-state="live"] .presence-live{color:#6bdca2}.presence-hint{margin:0 0 1px 16px;color:#8e8997;font-size:9px;line-height:1.5}.activity-row,.spotify-row{min-width:0;display:flex;align-items:center;gap:10px;padding-top:9px;border-top:1px solid #ffffff10}.activity-icon{width:29px;height:29px;display:grid;place-items:center;flex:0 0 auto;border:1px solid #a88bff26;border-radius:10px;background:#9a76e51a;color:#c3aaff}.activity-icon svg{width:15px;height:15px;fill:currentColor}.activity-copy,.spotify-copy{min-width:0;display:grid;gap:3px;flex:1}.activity-copy small,.spotify-copy small{color:#8e8798;font-size:7px;font-weight:700;letter-spacing:1.1px}.activity-copy strong,.spotify-copy strong{overflow:hidden;color:#eeeaf4;font-size:9px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}.activity-copy>span:last-child,.spotify-copy>span:last-child{overflow:hidden;color:#a19bab;font-size:8px;text-overflow:ellipsis;white-space:nowrap}.spotify-art{width:37px;height:37px;flex:0 0 auto;border:1px solid #ffffff16;border-radius:8px;background:#292530;object-fit:cover}.spotify-open{display:grid;place-items:center;width:25px;height:25px;flex:0 0 auto;border:1px solid #75d39e30;border-radius:50%;color:#8be0ae;font-size:13px;transition:background .16s}.spotify-open:hover{background:#73d49d1c}.spotify-open[hidden],.activity-row[hidden],.spotify-row[hidden],.presence-hint[hidden]{display:none}
 @media(max-width:600px){.discord-presence{margin-top:16px;padding:10px}.presence-status{font-size:9px}.spotify-art{width:34px;height:34px}}
 .presence-live.is-live{color:#6bdca2}.presence-hint a{color:#c3aaff;text-decoration:underline;text-underline-offset:2px}
