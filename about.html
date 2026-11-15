@@ -3,46 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#6750a4" />
-    <meta name="description" content="A little space about Darisko." />
-    <title>About me — Darisko</title>
+    <meta name="theme-color" content="#09090d" />
+    <meta name="description" content="A personal page for Darisko." />
+    <title>About — Darisko</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Flex:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script>
-      try {
-        const savedTheme = localStorage.getItem("daylight-theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (savedTheme === "dark" || (!savedTheme && prefersDark)) document.documentElement.dataset.theme = "dark";
-      } catch {}
-    </script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="about.css" />
   </head>
-  <body>
-    <main class="dashboard subpage-dashboard">
-      <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Darisko dashboard">
-          <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7.2 7.2 0 0 1-9-9Z"/><path d="M18 3v4m-2-2h4"/></svg></span>
-          <span>Darisko</span>
-        </a>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
-          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.4A8.5 8.5 0 0 1 8.6 3.9 8.7 8.7 0 1 0 20.1 15.4Z"/></svg>
-          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-        </button>
+  <body class="about-body">
+    <div class="ambient ambient-violet" aria-hidden="true"></div>
+    <div class="ambient ambient-blue" aria-hidden="true"></div>
+    <main class="profile-page">
+      <header class="profile-nav">
+        <a class="profile-brand" href="index.html" aria-label="Darisko home"><span class="brand-glyph">d<span>.</span></span><span>DARISKO</span></a>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="stats.html">Stats</a>
+          <a class="current" href="about.html" aria-current="page">About</a>
+        </nav>
       </header>
-      <section class="subpage-content">
-        <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Dashboard</a>
-        <p class="overline">A LITTLE INTRODUCTION</p>
-        <h1>About me</h1>
-        <p class="subtitle">A small corner of your dashboard, just for you.</p>
-        <div class="placeholder-card about-placeholder">
-          <span class="placeholder-icon about-placeholder-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-3.4 3.2-5.5 7-5.5s6.5 2.1 7 5.5"/></svg></span>
-          <h2>Your story goes here.</h2>
-          <p>Add a few words about yourself whenever you're ready.</p>
+
+      <section class="profile-card" aria-labelledby="profileName">
+        <div class="card-grain" aria-hidden="true"></div>
+        <div class="profile-orbit orbit-one" aria-hidden="true"></div>
+        <div class="profile-orbit orbit-two" aria-hidden="true"></div>
+        <div class="profile-topline"><span class="profile-label"><i></i> PERSONAL PAGE</span><span class="profile-index">01 / ABOUT</span></div>
+        <div class="profile-center">
+          <div class="avatar-wrap" aria-hidden="true"><div class="avatar-halo"></div><div class="avatar">D<span>.</span></div><span class="avatar-star star-a">✦</span><span class="avatar-star star-b">✧</span></div>
+          <p class="profile-kicker">A LITTLE SPACE ON THE INTERNET</p>
+          <h1 id="profileName">Darisko</h1>
+          <p class="profile-bio">This space is still taking shape.<br />More soon.</p>
+          <div class="profile-divider"><span></span><i>✳</i><span></span></div>
+          <p class="links-label">FIND YOUR WAY</p>
+          <div class="profile-links">
+            <a class="profile-link" href="index.html"><span class="link-icon home-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1Z"/></svg></span><span><strong>Dashboard</strong><small>Back to my space</small></span><b aria-hidden="true">↗</b></a>
+            <a class="profile-link" href="stats.html"><span class="link-icon stats-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h17M8 15v-4m5 4V7m5 8V9"/></svg></span><span><strong>Stats</strong><small>Things I'm tracking</small></span><b aria-hidden="true">↗</b></a>
+          </div>
         </div>
+        <div class="profile-bottomline"><span>MADE OF LITTLE THINGS</span><span>DK <i>✦</i> 2026</span></div>
       </section>
-      <footer class="footer"><span>Made for a little more breathing room</span><span class="footer-sparkle" aria-hidden="true">✦</span></footer>
+
+      <footer class="profile-footer"><span>JUST A LITTLE CORNER OF THE WEB</span><span class="footer-dots"><i></i><i></i><i></i></span></footer>
     </main>
   </body>
 </html>
