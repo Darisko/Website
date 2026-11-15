@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="about.css" />
+    <script src="discord.js" defer></script>
   </head>
   <body class="about-body">
     <div class="ambient ambient-violet" aria-hidden="true"></div>
@@ -34,6 +35,23 @@
           <p class="profile-kicker">A LITTLE SPACE ON THE INTERNET</p>
           <h1 id="profileName">Darisko</h1>
           <p class="profile-bio">This space is still taking shape.<br />More soon.</p>
+          <section class="discord-presence" id="discordPresence" data-state="loading" aria-label="Discord presence" aria-busy="true">
+            <div class="presence-heading">
+              <span class="presence-state-dot" aria-hidden="true"></span>
+              <span class="presence-status" id="discordStatus">Connecting to Discord</span>
+              <span class="presence-live" id="discordLive">CONNECTING</span>
+            </div>
+            <p class="presence-hint"><span id="discordHint">Checking live presence</span> <a id="lanyardJoin" href="https://discord.gg/lanyard" target="_blank" rel="noopener noreferrer" hidden>Join Lanyard</a></p>
+            <div class="activity-row" id="activityRow" hidden>
+              <span class="activity-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7Z"/></svg></span>
+              <span class="activity-copy"><small id="activityLabel">ACTIVITY</small><strong id="activityName"></strong><span id="activityDetails"></span></span>
+            </div>
+            <div class="spotify-row" id="spotifyRow" hidden>
+              <img class="spotify-art" id="spotifyArt" alt="" />
+              <span class="spotify-copy"><small>LISTENING ON SPOTIFY</small><strong id="spotifySong"></strong><span id="spotifyArtist"></span></span>
+              <a class="spotify-open" id="spotifyOpen" href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Open track in Spotify" hidden>↗</a>
+            </div>
+          </section>
           <div class="profile-divider"><span></span><i>✳</i><span></span></div>
           <p class="links-label">FIND YOUR WAY</p>
           <div class="profile-links">
