@@ -18,9 +18,14 @@ const spotifyArt = document.querySelector("#spotifyArt");
 const spotifySong = document.querySelector("#spotifySong");
 const spotifyArtist = document.querySelector("#spotifyArtist");
 const spotifyOpen = document.querySelector("#spotifyOpen");
+const spotifyProgressTrack = document.querySelector("#spotifyProgressTrack");
+const spotifyProgressFill = document.querySelector("#spotifyProgressFill");
+const spotifyElapsed = document.querySelector("#spotifyElapsed");
+const spotifyDuration = document.querySelector("#spotifyDuration");
 const profileAvatar = document.querySelector("#profileAvatar");
 const discordAvatar = document.querySelector("#discordAvatar");
 const avatarFallback = document.querySelector("#avatarFallback");
+const avatarWrap = document.querySelector(".avatar-wrap");
 
 let currentSocket = null;
 let heartbeatTimer = null;
@@ -28,12 +33,55 @@ let connectionTimer = null;
 let reconnectTimer = null;
 let reconnectAttempt = 0;
 let stopped = false;
+let activeSpotifyTrack = null;
+let spotifyProgressTimer = null;
+
+function formatTime(milliseconds) {
+  const seconds = Math.max(0, Math.floor(milliseconds / 1000));
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+}
+
+function updateSpotifyProgress() {
+  if (!activeSpotifyTrack) return;
+  const start = Number(activeSpotifyTrack.timestamps?.start);
+  const end = Number(activeSpotifyTrack.timestamps?.end);
+  const duration = end - start;
+  if (!Number.isFinite(start) || !Number.isFinite(end) || start <= 0 || duration <= 0) {
+    spotifyProgressTrack.classList.add("indeterminate");
+    spotifyProgressTrack.removeAttribute("aria-valuenow");
+    spotifyProgressFill.style.width = "34%";
+    spotifyElapsed.textContent = "--:--";
+    spotifyDuration.textContent = "--:--";
+    return;
+  }
+
+  const elapsed = Math.min(duration, Math.max(0, Date.now() - start));
+  const percentage = Math.min(100, (elapsed / duration) * 100);
+  spotifyProgressTrack.classList.remove("indeterminate");
+  spotifyProgressTrack.setAttribute("aria-valuenow", String(Math.round(percentage)));
+  spotifyProgressFill.style.width = `${percentage}%`;
+  spotifyElapsed.textContent = formatTime(elapsed);
+  spotifyDuration.textContent = formatTime(duration);
+}
+
+function stopSpotifyProgress() {
+  activeSpotifyTrack = null;
+  if (spotifyProgressTimer) window.clearInterval(spotifyProgressTimer);
+  spotifyProgressTimer = null;
+  avatarWrap.classList.remove("is-listening");
+  spotifyProgressTrack.classList.remove("indeterminate");
+  spotifyProgressTrack.setAttribute("aria-valuenow", "0");
+  spotifyProgressFill.style.width = "0%";
+  spotifyElapsed.textContent = "0:00";
+  spotifyDuration.textContent = "--:--";
+}
 
 function hideDetails() {
   activityRow.hidden = true;
   spotifyRow.hidden = true;
   spotifyOpen.hidden = true;
   spotifyArt.hidden = true;
+  stopSpotifyProgress();
 }
 
 function showUnavailable(message, { needsOptIn = false, connection = "UNAVAILABLE" } = {}) {
@@ -76,9 +124,14 @@ function displaySpotify(presence) {
     spotifyRow.hidden = true;
     spotifyOpen.hidden = true;
     spotifyArt.hidden = true;
+    stopSpotifyProgress();
     return;
   }
 
+  activeSpotifyTrack = track;
+  avatarWrap.classList.add("is-listening");
+  updateSpotifyProgress();
+  if (!spotifyProgressTimer) spotifyProgressTimer = window.setInterval(updateSpotifyProgress, 1000);
   spotifySong.textContent = track.song;
   spotifyArtist.textContent = track.artist || "";
   spotifyArtist.hidden = !track.artist;
@@ -290,6 +343,7 @@ function connectSocket() {
 window.addEventListener("pagehide", () => {
   stopped = true;
   clearSocketTimers();
+  stopSpotifyProgress();
   if (currentSocket) currentSocket.close();
 });
 
