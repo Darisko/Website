@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#090b09" />
+    <meta name="theme-color" content="#f3f5f2" />
     <meta name="description" content="A personal page for Darisko." />
     <title>About — Darisko</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="about.css" />
     <script src="discord.js" defer></script>
   </head>
@@ -27,10 +27,10 @@
       <section class="profile-card" aria-labelledby="profileName">
         <div class="profile-topline"><span class="profile-label"><i></i> PERSONAL PAGE</span><span class="profile-index">01 / ABOUT</span></div>
         <div class="profile-center">
-          <div class="avatar-wrap"><div class="avatar-halo" aria-hidden="true"></div><svg class="music-squiggle" id="musicSquiggle" viewBox="0 0 180 180" aria-hidden="true"><defs><linearGradient id="musicWaveGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c8f36d"/><stop offset=".48" stop-color="#f2f6da"/><stop offset="1" stop-color="#9ecb72"/></linearGradient></defs><path id="musicSquigglePath"/><text class="music-orbit-star" x="90" y="8" text-anchor="middle">✦</text></svg><div class="avatar" id="profileAvatar" role="img" aria-label="Darisko profile picture"><img class="avatar-image" id="discordAvatar" alt="" hidden /><span class="avatar-fallback" id="avatarFallback" aria-hidden="true">D<span>.</span></span></div><span class="avatar-star star-a" aria-hidden="true">✦</span><span class="avatar-star star-b" aria-hidden="true">✧</span></div>
-          <p class="profile-kicker">A LITTLE SPACE ON THE INTERNET</p>
+          <div class="avatar-wrap"><div class="avatar-halo" aria-hidden="true"></div><svg class="music-squiggle" id="musicSquiggle" viewBox="0 0 180 180" aria-hidden="true"><defs><linearGradient id="musicWaveGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#63a878"/><stop offset=".48" stop-color="#e5f3e7"/><stop offset="1" stop-color="#2e8b58"/></linearGradient></defs><path id="musicSquigglePath"/></svg><div class="avatar" id="profileAvatar" role="img" aria-label="Darisko profile picture"><img class="avatar-image" id="discordAvatar" alt="" hidden /><span class="avatar-fallback" id="avatarFallback" aria-hidden="true">D<span>.</span></span></div></div>
+          <p class="profile-kicker">ABOUT ME</p>
           <h1 id="profileName">Darisko</h1>
-          <p class="profile-bio">This space is still taking shape.<br />More soon.</p>
+          <p class="profile-bio">A little more about me<br />coming soon.</p>
           <section class="discord-presence" id="discordPresence" data-state="loading" aria-label="Discord presence" aria-busy="true">
             <div class="presence-heading">
               <span class="presence-state-dot" aria-hidden="true"></span>
@@ -43,26 +43,26 @@
               <span class="activity-copy"><small id="activityLabel">ACTIVITY</small><strong id="activityName"></strong><span id="activityDetails"></span></span>
             </div>
           </section>
-          <div class="profile-divider"><span></span><i>✳</i><span></span></div>
+          <div class="profile-divider"><span></span><i>·</i><span></span></div>
           <p class="links-label">FIND YOUR WAY</p>
           <div class="profile-links">
-            <a class="profile-link" href="index.html"><span class="link-icon home-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1Z"/></svg></span><span><strong>Dashboard</strong><small>Back to my space</small></span><b aria-hidden="true">↗</b></a>
+            <a class="profile-link" href="index.html"><span class="link-icon home-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1Z"/></svg></span><span><strong>Dashboard</strong><small>Back to home</small></span><b aria-hidden="true">↗</b></a>
             <a class="profile-link" href="stats.html"><span class="link-icon stats-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h17M8 15v-4m5 4V7m5 8V9"/></svg></span><span><strong>Stats</strong><small>Things I'm tracking</small></span><b aria-hidden="true">↗</b></a>
           </div>
         </div>
-        <div class="profile-bottomline"><span>MADE OF LITTLE THINGS</span><span>DK <i>✦</i> 2026</span></div>
+        <div class="profile-bottomline"><span>MADE OF LITTLE THINGS</span><span>DK · 2026</span></div>
       </section>
 
       <section class="music-player" aria-label="Spotify music player">
         <div class="music-player-heading">
-          <div><p class="music-overline">YOUR LISTENING SPACE</p><h2>Now playing</h2></div>
+          <div><p class="music-overline">LISTENING STATUS</p><h2>Now playing</h2></div>
           <span class="music-source"><i></i> SPOTIFY</span>
         </div>
         <div class="spotify-row" id="spotifyRow" data-state="idle" aria-label="Spotify player" aria-live="polite">
           <div class="spotify-artwork">
             <img class="spotify-art" id="spotifyArt" alt="" hidden />
             <span class="spotify-art-placeholder" id="spotifyPlaceholder" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13M9 18a3 3 0 1 1-2-2.83M20 16a3 3 0 1 1-2-2.83M9 8l11-2"/></svg><small>ALBUM ART</small></span>
-            <span class="spotify-art-shine" aria-hidden="true">✦</span>
+
           </div>
           <div class="spotify-copy">
             <small id="spotifyEyebrow">WAITING FOR MUSIC</small>
