@@ -1,123 +1,173 @@
-:root{font-family:"DM Sans",sans-serif;color:#f4f2f8;background:#09090d;font-synthesis:none;text-rendering:optimizeLegibility;--muted:#9994a4;--line:#ffffff17;--violet:#a98aff;--blue:#73c5ff}
-*{box-sizing:border-box}html{min-width:320px;min-height:100%;scroll-behavior:smooth}body{min-height:100vh;margin:0;overflow-x:hidden;background:#09090d;color:#f4f2f8;-webkit-font-smoothing:antialiased}body:before{position:fixed;inset:0;z-index:0;background-image:radial-gradient(#ffffff0c .7px,transparent .7px);background-size:23px 23px;content:"";pointer-events:none;mask-image:linear-gradient(to bottom,#000 0%,#0009 55%,transparent 100%)}body:after{position:fixed;inset:0;z-index:0;background:linear-gradient(120deg,transparent 15%,#ffffff03 50%,transparent 85%);content:"";pointer-events:none}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid #b79cff;outline-offset:4px;border-radius:9px}.ambient{position:fixed;z-index:0;width:440px;height:440px;border-radius:50%;filter:blur(115px);opacity:.18;pointer-events:none}.ambient-violet{top:7%;left:calc(50% - 500px);background:#7a3aff}.ambient-blue{right:calc(50% - 560px);bottom:3%;background:#1b82b6;opacity:.13}.profile-page{position:relative;z-index:1;width:min(100% - 44px,980px);min-height:100vh;margin:0 auto;display:flex;flex-direction:column}.profile-nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff10}.profile-brand{display:flex;align-items:center;gap:10px;color:#eceaf2;font-size:10px;font-weight:700;letter-spacing:1.8px}.brand-glyph{display:grid;place-items:center;width:31px;height:31px;border:1px solid #ffffff20;border-radius:10px;background:linear-gradient(145deg,#ffffff14,#ffffff04);font:700 20px "Space Grotesk",sans-serif;letter-spacing:-2px}.brand-glyph span{color:#b28bff}.profile-nav nav{display:flex;align-items:center;gap:7px}.profile-nav nav a{padding:9px 13px;border:1px solid transparent;border-radius:10px;color:#aaa5b2;font-size:11px;transition:color .18s,background .18s,border-color .18s}.profile-nav nav a:hover{color:white;background:#ffffff0a}.profile-nav nav a.current{border-color:#ffffff15;background:#ffffff0b;color:#fff}.profile-card{position:relative;isolation:isolate;width:min(100%,580px);min-height:636px;margin:auto;padding:23px 27px 19px;overflow:hidden;border:1px solid #ffffff1c;border-radius:27px;background:radial-gradient(ellipse at 50% 5%,#6b4b9727,transparent 43%),linear-gradient(145deg,#14131bfa,#0e0e14f7 58%,#12131afa);box-shadow:0 30px 110px #0009,0 0 90px #653c971b;backdrop-filter:blur(18px)}.profile-card:before{position:absolute;z-index:-1;inset:0;border-radius:inherit;background:linear-gradient(135deg,#ffffff0c,transparent 28%,transparent 65%,#ffffff05);content:"";pointer-events:none}.card-grain{position:absolute;z-index:-1;inset:0;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.27'/%3E%3C/svg%3E");pointer-events:none}.profile-topline,.profile-bottomline{display:flex;align-items:center;justify-content:space-between;color:#827d8a;font-size:8px;font-weight:700;letter-spacing:1.5px}.profile-label{display:flex;align-items:center;gap:7px}.profile-label i{width:6px;height:6px;border-radius:50%;background:#ad8bff;box-shadow:0 0 12px #a47cff}.profile-index{color:#6d6875}.profile-center{position:relative;z-index:1;width:min(100%,350px);margin:32px auto 24px;text-align:center}.avatar-wrap{position:relative;width:122px;height:122px;margin:0 auto 25px;display:grid;place-items:center}.avatar-halo{position:absolute;inset:0;border:1px solid #ad8bff32;border-radius:39px;transform:rotate(45deg);box-shadow:0 0 38px #9b66ff22,inset 0 0 24px #9b66ff12;animation:halo-turn 24s linear infinite}.avatar{position:relative;display:grid;place-items:center;width:92px;height:92px;border:1px solid #ffffff2a;border-radius:30px;background:radial-gradient(circle at 28% 20%,#ffffff31,transparent 33%),linear-gradient(145deg,#8763bf,#45375f 57%,#1a354b);box-shadow:0 15px 42px #0008,inset 0 1px 0 #ffffff38;font:600 45px "Space Grotesk",sans-serif;letter-spacing:-5px;text-shadow:0 2px 22px #ffffff50;transform:rotate(-3deg)}.avatar span{color:#c4a8ff}.avatar-star{position:absolute;color:#c5a8ff;text-shadow:0 0 13px #aa80ff;animation:float 4s ease-in-out infinite}.star-a{top:15px;right:-8px;font-size:17px}.star-b{bottom:14px;left:-5px;color:#80cfff;font-size:15px;animation-delay:-2s}.profile-kicker{margin:0 0 9px;color:#aaa2b6;font-size:9px;font-weight:700;letter-spacing:2.2px}.profile-center h1{margin:0;color:#fff;font:600 39px/1.15 "Space Grotesk",sans-serif;letter-spacing:-1.8px}.profile-bio{margin:12px 0 0;color:#9f99a8;font-size:12px;line-height:1.8}.profile-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:23px 0 18px;color:#ad8aff}.profile-divider span{width:77px;height:1px;background:linear-gradient(90deg,transparent,#ffffff25)}.profile-divider span:last-child{transform:rotate(180deg)}.profile-divider i{font-size:11px;font-style:normal}.links-label{margin:0 0 10px;color:#77717e;font-size:8px;font-weight:700;letter-spacing:1.9px}.profile-links{display:grid;gap:9px;text-align:left}.profile-link{min-height:59px;display:flex;align-items:center;gap:11px;padding:9px 12px;border:1px solid #ffffff12;border-radius:14px;background:linear-gradient(100deg,#ffffff0a,#ffffff04);transition:transform .18s,border-color .18s,background .18s}.profile-link:hover{transform:translateY(-2px);border-color:#b898ff50;background:linear-gradient(100deg,#a178ff17,#7ac5ff0b)}.link-icon{display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffff12;border-radius:11px;background:#a688fa14;color:#c3a9ff}.link-icon svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.stats-link-icon{background:#80caff12;color:#8bd0ff}.profile-link>span:nth-child(2){display:grid;gap:3px;flex:1}.profile-link strong{font-size:11px;font-weight:600;color:#f2eff7}.profile-link small{color:#888391;font-size:9px}.profile-link b{color:#827b90;font-size:13px;font-weight:400}.profile-bottomline{padding-top:15px;border-top:1px solid #ffffff10;color:#716b79;font-size:7px;letter-spacing:1.4px}.profile-bottomline i{color:#ab88f4;font-style:normal}.profile-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding:21px 2px 23px;color:#66616e;font-size:8px;font-weight:600;letter-spacing:1.6px}.footer-dots{display:flex;gap:5px}.footer-dots i{width:4px;height:4px;border-radius:50%;background:#6d6676}.footer-dots i:nth-child(2){background:#a586dc}.footer-dots i:nth-child(3){background:#638eac}@keyframes halo-turn{to{transform:rotate(405deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@media(max-width:600px){.profile-page{width:calc(100% - 28px)}.profile-nav{height:68px}.profile-nav nav{gap:1px}.profile-nav nav a{padding:8px 9px;font-size:10px}.profile-brand{gap:7px;font-size:9px;letter-spacing:1.2px}.brand-glyph{width:28px;height:28px}.profile-card{min-height:600px;margin:32px auto;padding:18px 17px 16px;border-radius:23px}.profile-center{margin-top:37px}.avatar-wrap{width:110px;height:110px}.avatar{width:82px;height:82px;border-radius:27px;font-size:40px}.profile-center h1{font-size:35px}.profile-footer{font-size:7px;letter-spacing:1.2px}}
-@media(max-width:360px){.profile-nav nav a{padding:8px 7px;font-size:9px}.profile-brand{font-size:8px;letter-spacing:1px}.profile-card{padding-right:13px;padding-left:13px}.profile-index{font-size:7px}.profile-topline{font-size:7px}}
+:root{
+  color-scheme:dark;
+  font-family:"Roboto","DM Sans",Arial,sans-serif;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  --md-primary:#d0bcff;
+  --md-on-primary:#381e72;
+  --md-primary-container:#4f378b;
+  --md-on-primary-container:#eaddff;
+  --md-secondary:#ccc2dc;
+  --md-tertiary:#efb8c8;
+  --md-background:#141218;
+  --md-surface-low:#1d1b20;
+  --md-surface:#211f26;
+  --md-surface-high:#2b2930;
+  --md-surface-highest:#36343b;
+  --md-on-surface:#e6e0e9;
+  --md-on-surface-variant:#cac4d0;
+  --md-outline:#48454e;
+  --md-outline-variant:#49454f;
+  --md-success:#8dddaf;
+  background:var(--md-background);
+  color:var(--md-on-surface)
+}
+*{box-sizing:border-box}
+html{min-width:320px;min-height:100%;scroll-behavior:smooth}
+body{min-height:100vh;margin:0;background:radial-gradient(ellipse at 50% -25%,#4636675c,transparent 55%),var(--md-background);color:var(--md-on-surface)}
+body:before{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 12% 20%,#d0bcff08 0 1px,transparent 1.5px),radial-gradient(circle at 88% 75%,#d0bcff08 0 1px,transparent 1.5px);background-size:46px 46px,61px 61px;content:"";pointer-events:none}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--md-primary);outline-offset:3px;border-radius:12px}
+button{font:inherit}
+[hidden]{display:none!important}
+.profile-page{position:relative;z-index:1;width:min(100% - 40px,1160px);min-height:100vh;margin:0 auto;display:flex;flex-direction:column}
 
-/* Material 3 shared page navigation */
-.profile-nav{gap:18px;height:80px;border-color:#ffffff12}
-.profile-menu{display:flex;align-items:center;gap:4px;padding:4px;border:1px solid #ffffff12;border-radius:999px;background:#ffffff08}
-.profile-nav .profile-menu a{min-height:38px;display:flex;align-items:center;justify-content:center;gap:7px;padding:0 14px;border:0;border-radius:999px;color:#b7b1c0;font-size:11px;font-weight:500;transition:background .2s,color .2s,transform .2s}
-.profile-menu a svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.profile-nav .profile-menu a:hover{background:#ffffff0d;color:#fff}
+/* Small app bar and primary navigation */
+.profile-nav{position:relative;height:76px;flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #ffffff12}
+.profile-brand{display:flex;align-items:center;gap:11px;color:var(--md-on-surface);font-size:13px;font-weight:700;letter-spacing:1.3px}
+.brand-glyph{width:38px;height:38px;display:grid;place-items:center;border-radius:14px;background:var(--md-primary-container);color:var(--md-on-primary-container);font:700 21px "Roboto",sans-serif;letter-spacing:-2px}
+.brand-glyph span{color:var(--md-primary)}
+.profile-menu{display:flex;align-items:center;gap:4px;padding:4px;border:1px solid #ffffff0c;border-radius:999px;background:var(--md-surface-low)}
+.profile-nav .profile-menu a{min-height:40px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 17px;border:0;border-radius:999px;color:var(--md-on-surface-variant);font-size:12px;font-weight:500;transition:background .2s,color .2s,transform .2s}
+.profile-menu a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.profile-nav .profile-menu a:hover{background:#ffffff0a;color:var(--md-on-surface)}
 .profile-nav .profile-menu a:active{transform:scale(.97)}
-.profile-nav .profile-menu a.current{background:#d0bcff;color:#381e72;font-weight:600;box-shadow:0 1px 3px #0003}
-@media(max-width:600px){.profile-nav{height:auto;min-height:68px;flex-wrap:wrap;gap:10px;padding:10px 0}.profile-menu{order:3;width:100%;justify-content:center}.profile-nav .profile-menu a{min-height:35px;flex:1;max-width:140px;padding:0 9px;font-size:10px}}
-@media(max-width:360px){.profile-menu a svg{width:14px;height:14px}.profile-nav .profile-menu a{gap:5px;padding:0 6px}}
+.profile-nav .profile-menu a.current{background:var(--md-primary-container);color:var(--md-on-primary-container);font-weight:600}
 
-/* PixelPlayer-inspired expressive now-playing card */
-.discord-presence{gap:11px}
-.spotify-row{position:relative;isolation:isolate;min-width:0;display:grid;grid-template-columns:78px minmax(0,1fr);align-items:center;gap:6px 14px;margin:0;padding:15px;overflow:hidden;border:1px solid #ffffff18;border-radius:22px;background:radial-gradient(ellipse at 84% 4%,#9771d522,transparent 52%),linear-gradient(145deg,#201c2a,#14131b 80%);box-shadow:0 8px 26px #0003,inset 0 1px #ffffff12;transition:border-color .25s,background .25s,box-shadow .25s}
-.spotify-row:before{position:absolute;z-index:-2;inset:-35px;background-image:linear-gradient(110deg,#100e18e8 8%,#15121ddc 48%,#17131dd9),var(--spotify-art-bg,radial-gradient(ellipse at 88% 8%,#7752b932,transparent 55%));background-position:center;background-size:cover;content:"";filter:blur(24px) saturate(1.35);opacity:.72;transform:scale(1.1);transition:opacity .4s}
-.spotify-row:after{position:absolute;z-index:-1;inset:0;border-radius:inherit;background:linear-gradient(135deg,#ffffff08,transparent 42%,#b48cff08);content:"";pointer-events:none}
-.spotify-row[data-state="playing"]{border-color:#d6c2ff3d;box-shadow:0 10px 30px #0004,0 0 30px #9c6dff11,inset 0 1px #ffffff16}
-.spotify-row[data-state="playing"]:before{opacity:.95}
-.spotify-artwork{position:relative;grid-column:1;grid-row:1 / span 3;width:78px;height:78px;align-self:center;overflow:hidden;border:1px solid #ffffff32;border-radius:18px;background:linear-gradient(145deg,#393145,#211d2b);box-shadow:0 8px 22px #0006,0 1px #ffffff30 inset}
-.spotify-art{display:block;width:100%;height:100%;margin:0;border:0;border-radius:inherit;background:transparent;object-fit:cover}
-.spotify-art-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#d7c2ff;background:radial-gradient(circle at 70% 18%,#d4b5ff35,transparent 48%),linear-gradient(145deg,#41364f,#211d2a)}
-.spotify-art-placeholder svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 8px #c4a2ff90)}
-.spotify-art-shine{position:absolute;right:7px;bottom:6px;color:#fff9;font-size:12px;text-shadow:0 0 8px #fff;pointer-events:none}
-.spotify-copy{position:relative;z-index:1;grid-column:2;align-self:center;gap:4px;min-width:0}
-.spotify-copy small{overflow:hidden;color:#d4c0ff;font-size:8px;font-weight:700;letter-spacing:1.2px;text-overflow:ellipsis;white-space:nowrap}
-.spotify-row[data-state="playing"] .spotify-copy small{color:#c8b0ff}
-.spotify-copy strong{overflow:hidden;color:#fcfaff;font-size:14px;font-weight:600;letter-spacing:-.2px;text-overflow:ellipsis;white-space:nowrap}
-.spotify-copy>#spotifyArtist,.spotify-copy>#spotifyAlbum{overflow:hidden;color:#c3bdcc;font-size:10px;line-height:1.35;text-overflow:ellipsis;white-space:nowrap}
-.spotify-copy>#spotifyAlbum{color:#918a9e;font-size:9px}
-.spotify-copy>.spotify-progress{display:grid;gap:5px;margin-top:7px}
-.spotify-progress .spotify-wave{height:15px}
-.spotify-wave .wave-track{stroke:#f8f0ff3b;stroke-width:1.45}
-.spotify-wave .wave-fill{stroke:url(#musicWaveGradient);stroke-width:2.8;filter:drop-shadow(0 0 3px #a2edff9c)}
-.spotify-times{color:#b4adbf;font-size:8px}
-.spotify-open{position:relative;z-index:1;grid-column:2;justify-self:start;width:auto;height:32px;display:flex;align-items:center;justify-content:center;gap:9px;margin:5px 0 0;padding:0 13px;border:1px solid #ffffff24;border-radius:999px;background:#ffffff12;color:#f1e9ff;font-size:9px;font-weight:600;letter-spacing:.1px;backdrop-filter:blur(12px);transition:transform .18s,background .18s,border-color .18s}
-.spotify-open:hover{transform:translateY(-1px);border-color:#ddc5ff70;background:#ffffff1d}
-.spotify-open:active{transform:scale(.98)}
-.spotify-open b{font-size:13px;font-weight:400}
-.spotify-art[hidden],.spotify-art-placeholder[hidden],.spotify-progress[hidden],.spotify-open[hidden]{display:none}
-@media(max-width:600px){.spotify-row{grid-template-columns:66px minmax(0,1fr);gap:6px 11px;padding:12px 11px;border-radius:19px}.spotify-artwork{width:66px;height:66px;border-radius:16px}.spotify-copy strong{font-size:13px}.spotify-copy>#spotifyArtist{font-size:9px}.spotify-open{height:30px}}
-@media(max-width:360px){.spotify-row{grid-template-columns:56px minmax(0,1fr);column-gap:9px;padding:10px}.spotify-artwork{width:56px;height:56px;border-radius:14px}.spotify-copy strong{font-size:12px}.spotify-open{height:28px}}
+/* Page scaffold and profile card */
+.about-layout{width:100%;display:grid;grid-template-columns:minmax(310px,.84fr) minmax(0,1.16fr);align-items:stretch;gap:24px;margin:auto;padding:30px 0}
+.profile-card,.music-player{position:relative;isolation:isolate;min-width:0;overflow:hidden;border:1px solid var(--md-outline-variant);border-radius:28px;background:var(--md-surface);box-shadow:0 8px 28px #0003}
+.profile-card{min-height:650px;display:flex;flex-direction:column;justify-content:space-between;padding:22px}
+.profile-card:before,.music-player:before{position:absolute;z-index:-1;inset:0;background:linear-gradient(145deg,#ffffff06,transparent 45%,#d0bcff04);content:"";pointer-events:none}
+.card-grain,.profile-orbit{display:none}
+.profile-topline,.profile-bottomline{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--md-on-surface-variant);font-size:10px;font-weight:600;letter-spacing:.7px}
+.profile-label{display:flex;align-items:center;gap:9px}
+.profile-label i{width:8px;height:8px;border-radius:50%;background:var(--md-primary);box-shadow:0 0 0 4px #d0bcff1a}
+.profile-index{color:#aaa4b1;font-size:9px}
+.profile-center{position:relative;z-index:1;width:100%;margin:25px auto 22px;text-align:center}
 
-/* Full-width profile and dedicated music-player composition */
-.profile-page{width:min(100% - 44px,1100px)}
-.about-layout{width:100%;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:stretch;gap:22px;margin:auto;padding:28px 0}
-.profile-card{width:100%;min-height:640px;margin:0;padding:22px 24px 18px;display:flex;flex-direction:column;justify-content:space-between;border-radius:30px}
-.profile-center{width:min(100%,370px);margin:20px auto;}
-.music-player{position:relative;isolation:isolate;min-width:0;min-height:640px;display:flex;flex-direction:column;padding:24px;border:1px solid #ffffff1c;border-radius:30px;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#71549e27,transparent 55%),linear-gradient(145deg,#18151f,#0d0c12 86%);box-shadow:0 30px 100px #0008,0 0 80px #7046a51a;backdrop-filter:blur(18px)}
-.music-player:before{position:absolute;z-index:-1;inset:0;background:linear-gradient(145deg,#ffffff09,transparent 35%,transparent 75%,#b28aff08);content:"";pointer-events:none}
-.music-player-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-.music-overline{margin:0 0 5px;color:#a69daf;font-size:8px;font-weight:700;letter-spacing:1.7px}
-.music-player-heading h2{margin:0;color:#fbf8ff;font:600 25px/1.2 "Space Grotesk",sans-serif;letter-spacing:-.7px}
-.music-source{display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #ffffff12;border-radius:999px;background:#ffffff08;color:#bbb2c7;font-size:7px;font-weight:700;letter-spacing:1px}
-.music-source i,.music-player-footer i{width:6px;height:6px;border-radius:50%;background:#8de2b4;box-shadow:0 0 10px #83e6ae}
-.spotify-row{position:relative;isolation:isolate;flex:1;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:18px;margin:0;padding:12px 5px 18px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none}
-.spotify-row:before{inset:-28px -18px;border-radius:28px;background-image:linear-gradient(180deg,#0e0c14ad,#0d0b13e8 58%,#0d0b13ef),var(--spotify-art-bg,radial-gradient(ellipse at center 25%,#9865d425,transparent 65%));opacity:.75;filter:blur(34px) saturate(1.5)}
-.spotify-row:after{display:none}
-.spotify-row[data-state="playing"]{border:0;background:transparent;box-shadow:none}
+/* Profile photo and listening animation */
+.avatar-wrap{position:relative;width:116px;height:116px;margin:0 auto 20px;display:grid;place-items:center}
+.avatar-halo{position:absolute;inset:2px;border:1px solid #d0bcff4d;border-radius:50%;box-shadow:0 0 0 7px #d0bcff09,0 0 25px #d0bcff16;animation:halo-turn 20s linear infinite}
+.avatar-halo:after{position:absolute;inset:-7px;border:1px dashed #d0bcff50;border-radius:50%;content:""}
+.avatar{position:relative;display:grid;place-items:center;width:88px;height:88px;overflow:hidden;border:3px solid var(--md-surface-highest);border-radius:50%;background:linear-gradient(145deg,#7553aa,#3b3150);color:#f4edff;font:600 40px/1 "Roboto",sans-serif;box-shadow:0 0 0 1px #d0bcff62,0 8px 24px #0006}
+.avatar span{color:var(--md-primary)}
+.avatar-image{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;object-fit:cover}
+.avatar-image[hidden],.avatar-fallback[hidden]{display:none}
+.avatar-fallback{position:relative;z-index:1;pointer-events:none}
+.avatar:after{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,#ffffff18,transparent 48%);content:"";pointer-events:none}
+.avatar-star{position:absolute;z-index:4;color:#eaddff;font-size:16px;text-shadow:0 0 12px #d0bcff;animation:star-float 3.5s ease-in-out infinite}
+.star-a{top:16px;right:4px}
+.star-b{bottom:15px;left:5px;color:#a8dfff;animation-delay:-1.7s}
+.music-squiggle{position:absolute;inset:-19px;z-index:3;width:calc(100% + 38px);height:calc(100% + 38px);overflow:visible;opacity:0;visibility:hidden;pointer-events:none;filter:drop-shadow(0 0 5px #a8dfff88)}
+.music-squiggle path{fill:none;stroke:url(#musicWaveGradient);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.music-orbit-star{fill:#eaddff;font:14px "Roboto",sans-serif;filter:drop-shadow(0 0 5px #d0bcff)}
+.avatar-wrap.is-listening .avatar-halo{border-color:#9ce8c280;box-shadow:0 0 0 7px #8dddaf10,0 0 27px #8dddaf24}
+.avatar-wrap.is-listening .music-squiggle{opacity:1;visibility:visible;animation:music-ring 18s linear infinite}
+.profile-kicker{margin:0 0 7px;color:var(--md-primary);font-size:10px;font-weight:700;letter-spacing:1.5px}
+.profile-center h1{margin:0;color:var(--md-on-surface);font:500 34px/1.2 "Roboto",Arial,sans-serif;letter-spacing:-.6px}
+.profile-bio{margin:9px 0 20px;color:var(--md-on-surface-variant);font-size:13px;line-height:1.65}
+
+/* Discord presence and activity use M3 cards, status chips and list rows */
+.discord-presence{width:100%;display:grid;gap:11px;margin:0 auto;padding:15px;border:1px solid var(--md-outline);border-radius:20px;background:var(--md-surface-low);text-align:left}
+.presence-heading{min-height:28px;display:flex;align-items:center;gap:10px}
+.presence-state-dot{width:10px;height:10px;flex:0 0 auto;border:2px solid #ffffff24;border-radius:50%;background:#aaa4b1;box-shadow:0 0 0 4px #aaa4b117}
+.presence-status{color:var(--md-on-surface);font-size:13px;font-weight:500}
+.presence-live{margin-left:auto;padding:5px 9px;border:1px solid var(--md-outline);border-radius:999px;color:var(--md-on-surface-variant);font-size:8px;font-weight:700;letter-spacing:.8px}
+.presence-live:before{display:inline-block;width:6px;height:6px;margin:0 6px 1px 0;border-radius:50%;background:currentColor;content:""}
+.discord-presence[data-state="online"] .presence-state-dot{background:#8dddaf;box-shadow:0 0 0 4px #8dddaf1c}
+.discord-presence[data-state="idle"] .presence-state-dot{background:#f5c76b;box-shadow:0 0 0 4px #f5c76b1c}
+.discord-presence[data-state="dnd"] .presence-state-dot{background:#ffb4ab;box-shadow:0 0 0 4px #ffb4ab1c}
+.discord-presence[data-state="offline"] .presence-state-dot,.discord-presence[data-state="unavailable"] .presence-state-dot{background:#aaa4b1;box-shadow:0 0 0 4px #aaa4b117}
+.discord-presence[data-state="live"] .presence-live,.presence-live.is-live{color:var(--md-success)}
+.presence-hint{margin:0;color:var(--md-on-surface-variant);font-size:11px;line-height:1.5}
+.presence-hint a{color:var(--md-primary);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.activity-row{min-width:0;display:flex;align-items:center;gap:11px;padding:11px;border:1px solid #ffffff0e;border-radius:16px;background:var(--md-surface-high)}
+.activity-icon{width:38px;height:38px;display:grid;place-items:center;flex:0 0 auto;border-radius:13px;background:#4f378b;color:var(--md-on-primary-container)}
+.activity-icon svg{width:19px;height:19px;fill:currentColor}
+.activity-copy{min-width:0;display:grid;gap:4px;flex:1}
+.activity-copy small{color:var(--md-primary);font-size:8px;font-weight:700;letter-spacing:1px}
+.activity-copy strong{overflow:hidden;color:var(--md-on-surface);font-size:12px;font-weight:500;text-overflow:ellipsis;white-space:nowrap}
+.activity-copy>span:last-child{overflow:hidden;color:var(--md-on-surface-variant);font-size:10px;text-overflow:ellipsis;white-space:nowrap}
+
+/* Supporting page destinations as tonal list buttons */
+.profile-divider{display:flex;align-items:center;justify-content:center;gap:11px;margin:21px 0 16px;color:var(--md-primary)}
+.profile-divider span{height:1px;flex:1;background:var(--md-outline)}
+.profile-divider i{font-size:15px;font-style:normal}
+.links-label{margin:0 0 9px;color:var(--md-on-surface-variant);font-size:9px;font-weight:700;letter-spacing:1.2px;text-align:left}
+.profile-links{display:grid;gap:8px;text-align:left}
+.profile-link{min-height:56px;display:flex;align-items:center;gap:11px;padding:8px 11px;border:1px solid #ffffff0c;border-radius:17px;background:var(--md-surface-high);transition:background .18s,border-color .18s,transform .18s}
+.profile-link:hover{transform:translateY(-1px);border-color:#d0bcff52;background:var(--md-surface-highest)}
+.profile-link:active{transform:scale(.99)}
+.link-icon{width:36px;height:36px;display:grid;place-items:center;flex:0 0 auto;border-radius:12px;background:#4f378b;color:var(--md-on-primary-container)}
+.link-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.stats-link-icon{background:#633b55;color:#f5d9eb}
+.profile-link>span:nth-child(2){min-width:0;display:grid;gap:3px;flex:1}
+.profile-link strong{color:var(--md-on-surface);font-size:12px;font-weight:500}
+.profile-link small{color:var(--md-on-surface-variant);font-size:10px}
+.profile-link b{color:var(--md-on-surface-variant);font-size:17px;font-weight:400}
+.profile-bottomline{padding-top:14px;border-top:1px solid #ffffff14;color:#a49daa;font-size:8px;letter-spacing:1px}
+.profile-bottomline i{color:var(--md-primary);font-style:normal}
+
+/* Material 3 now-playing card with the custom wavy progress line retained */
+.music-player{min-height:650px;display:flex;flex-direction:column;padding:24px;background:radial-gradient(ellipse at 50% 35%,#4f378b25,transparent 56%),var(--md-surface)}
+.music-player-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:12px}
+.music-overline{margin:0 0 5px;color:var(--md-on-surface-variant);font-size:9px;font-weight:700;letter-spacing:1.2px}
+.music-player-heading h2{margin:0;color:var(--md-on-surface);font-size:24px;font-weight:500;letter-spacing:-.35px}
+.music-source{display:flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid var(--md-outline);border-radius:999px;background:var(--md-surface-low);color:var(--md-on-surface-variant);font-size:8px;font-weight:700;letter-spacing:.9px}
+.music-source i{width:7px;height:7px;border-radius:50%;background:#8dddaf;box-shadow:0 0 0 4px #8dddaf16}
+.spotify-row{position:relative;isolation:isolate;flex:1;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:18px;min-width:0;margin:0;padding:16px 4px 20px;overflow:hidden;border:0;border-radius:22px;background:transparent}
+.spotify-row:before{position:absolute;z-index:-2;inset:-22px;border-radius:28px;background-image:linear-gradient(180deg,#211f26a8,#211f26e8 50%,#211f26ee),var(--spotify-art-bg,radial-gradient(ellipse at center 25%,#d0bcff2c,transparent 65%));background-position:center;background-size:cover;content:"";filter:blur(28px) saturate(1.25);opacity:.8;transform:scale(1.1);transition:opacity .35s}
+.spotify-row:after{position:absolute;z-index:-1;inset:0;border:1px solid #ffffff0c;border-radius:22px;background:linear-gradient(135deg,#ffffff04,transparent 65%);content:"";pointer-events:none}
 .spotify-row[data-state="playing"]:before{opacity:1}
-.spotify-artwork{position:relative;z-index:1;flex:0 0 auto;width:min(100%,320px);height:auto;aspect-ratio:1;margin:0 auto 2px;overflow:hidden;border:1px solid #ffffff25;border-radius:27px;background:linear-gradient(145deg,#453957,#1c1724);box-shadow:0 20px 48px #0009,0 1px #ffffff27 inset}
-.spotify-art{width:100%;height:100%;object-fit:cover}
-.spotify-art-placeholder{gap:12px;align-content:center;color:#e0d1ff;background:radial-gradient(ellipse at 70% 15%,#d4b5ff38,transparent 50%),radial-gradient(ellipse at 20% 90%,#77dfff27,transparent 54%),linear-gradient(145deg,#382b48,#19151f)}
-.spotify-art-placeholder svg{width:42px;height:42px;stroke-width:1.2}
-.spotify-art-placeholder small{color:#d5c8e9;font-size:8px;font-weight:700;letter-spacing:2px}
-.spotify-art-shine{right:14px;bottom:12px;font-size:17px}
-.spotify-copy{position:relative;z-index:1;width:100%;align-self:stretch;gap:6px;text-align:center}
-.spotify-copy small{color:#c5a8ff;font-size:8px;letter-spacing:1.65px}
-.spotify-copy strong{max-width:100%;font-size:clamp(19px,2vw,25px);line-height:1.2;letter-spacing:-.6px}
-.spotify-copy>#spotifyArtist{color:#d2cbd9;font-size:12px}
-.spotify-copy>#spotifyAlbum{color:#928b9c;font-size:10px}
-.spotify-copy>.spotify-progress{gap:7px;margin-top:12px}
-.spotify-progress .spotify-wave{height:20px}
-.spotify-wave .wave-track{stroke:#ffffff47;stroke-width:1.4}
-.spotify-wave .wave-fill{stroke-width:2.8;filter:drop-shadow(0 0 5px #9beaffb0)}
-.spotify-times{color:#b2aabc;font-size:9px}
-.spotify-open{align-self:center;justify-self:auto;min-width:166px;height:44px;gap:11px;margin:0;padding:0 18px;border:0;border-radius:999px;background:#d0bcff;color:#32195e;font-size:11px;font-weight:700;box-shadow:0 4px 15px #0004;backdrop-filter:none}
-.spotify-open:hover{transform:translateY(-1px);border-color:transparent;background:#e1d3ff}
-.spotify-open:active{transform:scale(.98)}
-.spotify-open b{font-size:15px}
-.music-player-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #ffffff12;color:#8d8698;font-size:8px}
-.music-player-footer>span:first-child{display:flex;align-items:center;gap:7px;color:#bdb5c8;font-size:7px;font-weight:700;letter-spacing:1px}
-.music-player-footer>span:last-child{text-align:right}
-@media(max-width:850px){.profile-page{width:min(100% - 32px,650px)}.about-layout{grid-template-columns:1fr;max-width:560px;gap:18px}.profile-card{min-height:600px}.music-player{min-height:620px}.spotify-artwork{width:min(100%,300px)}}
-@media(max-width:600px){.profile-page{width:calc(100% - 28px)}.about-layout{padding:20px 0}.profile-card{min-height:600px}.music-player{min-height:570px;padding:20px;border-radius:25px}.music-player-heading h2{font-size:23px}.spotify-row{gap:15px}.spotify-artwork{width:min(100%,260px);border-radius:23px}.spotify-copy strong{font-size:21px}.music-player-footer{font-size:7px}}
-@media(max-width:360px){.music-player{min-height:530px;padding:17px}.spotify-artwork{width:min(100%,230px)}.music-player-footer{align-items:flex-start}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
-
-/* Media3-inspired Spotify now-playing surface */
-.spotify-row{align-items:center;gap:12px;margin-top:2px;padding:12px;border:1px solid #ffffff12;border-radius:16px;background:linear-gradient(125deg,#ffffff0b,#ffffff04 62%,#a882ff09);box-shadow:inset 0 1px #ffffff08;transition:border-color .25s,background .25s}
-.spotify-row[data-state="playing"]{border-color:#9beaff30;background:linear-gradient(125deg,#72dfff0c,#ffffff05 48%,#a882ff12)}
-.spotify-artwork{position:relative;width:52px;height:52px;flex:0 0 auto;overflow:hidden;border:1px solid #ffffff19;border-radius:13px;background:linear-gradient(145deg,#292233,#15131b);box-shadow:0 5px 16px #0005}
+.spotify-artwork{position:relative;z-index:1;flex:0 0 auto;width:min(100%,300px);height:auto;aspect-ratio:1;margin:0 auto;overflow:hidden;border:1px solid #ffffff2b;border-radius:24px;background:linear-gradient(145deg,#46365b,#29242f);box-shadow:0 14px 32px #0006,0 1px #ffffff20 inset}
 .spotify-art{display:block;width:100%;height:100%;margin:0;border:0;border-radius:inherit;background:transparent;object-fit:cover}
-.spotify-art-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#b99aff;background:radial-gradient(circle at 70% 18%,#8d62c52c,transparent 48%),linear-gradient(145deg,#252033,#14131a)}
-.spotify-art-placeholder svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 7px #a783ff62)}
-.spotify-art-placeholder[hidden],.spotify-art[hidden],.spotify-progress[hidden]{display:none}
-.spotify-copy{align-self:center;gap:4px}
-.spotify-copy small{color:#a994cf;font-size:7px;letter-spacing:1.35px}
-.spotify-row[data-state="playing"] .spotify-copy small{color:#87dfc0}
-.spotify-copy strong{font-size:11px;line-height:1.25}
-.spotify-copy>#spotifyArtist{font-size:9px;line-height:1.35}
-.spotify-copy>.spotify-progress{display:grid;gap:4px;margin-top:5px}
-.spotify-progress .spotify-wave{width:100%;height:13px}
-.spotify-open{width:auto;height:30px;display:flex;align-items:center;justify-content:center;gap:8px;margin:0;padding:0 10px;border:1px solid #ffffff16;border-radius:999px;background:#ffffff08;color:#d7c7ff;font-size:8px;font-weight:600;white-space:nowrap}
-.spotify-open b{font-size:12px;font-weight:400}
-.spotify-open:hover{border-color:#b99aff55;background:#a783ff19}
-.spotify-open[hidden]{display:none}
-@media(max-width:600px){.spotify-row{gap:9px;padding:10px}.spotify-artwork{width:46px;height:46px}.spotify-open{gap:5px;padding:0 8px;font-size:7px}}
-@media(max-width:360px){.spotify-open span{display:none}.spotify-open{width:28px;padding:0}}
+.spotify-art-placeholder{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;gap:11px;color:var(--md-on-primary-container);background:radial-gradient(ellipse at 70% 15%,#d0bcff2c,transparent 50%),linear-gradient(145deg,#393046,#24212a)}
+.spotify-art-placeholder svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.spotify-art-placeholder small{color:var(--md-on-surface-variant);font-size:8px;font-weight:700;letter-spacing:1.4px}
+.spotify-art-shine{position:absolute;right:14px;bottom:12px;color:#fff9;font-size:16px;text-shadow:0 0 12px #fff}
+.spotify-copy{position:relative;z-index:1;width:100%;display:grid;align-self:stretch;gap:6px;min-width:0;text-align:center}
+.spotify-copy small{overflow:hidden;color:var(--md-primary);font-size:8px;font-weight:700;letter-spacing:1.5px;text-overflow:ellipsis;white-space:nowrap}
+.spotify-copy strong{overflow:hidden;color:var(--md-on-surface);font-size:clamp(19px,2.2vw,25px);font-weight:500;letter-spacing:-.45px;text-overflow:ellipsis;white-space:nowrap}
+.spotify-copy>#spotifyArtist{overflow:hidden;color:var(--md-on-surface-variant);font-size:12px;text-overflow:ellipsis;white-space:nowrap}
+.spotify-copy>#spotifyAlbum{overflow:hidden;color:#aaa3b0;font-size:10px;text-overflow:ellipsis;white-space:nowrap}
+.spotify-copy>.spotify-progress{min-width:0;display:grid;gap:5px;margin-top:10px;overflow:visible}
+.spotify-wave{position:static;display:block;width:100%;height:18px;overflow:visible;background:transparent}
+.spotify-wave .wave-track{stroke:#cac4d052;stroke-width:1.55}
+.spotify-wave .wave-fill{stroke:url(#musicWaveGradient);stroke-width:2.8;stroke-dasharray:0 100;filter:drop-shadow(0 0 4px #d0bcff88);transition:stroke-dasharray .8s linear}
+.spotify-wave.indeterminate .wave-fill{stroke-dasharray:22 100!important;animation:wave-drift 1.5s ease-in-out infinite alternate}
+.spotify-times{display:flex;justify-content:space-between;color:var(--md-on-surface-variant);font-size:9px;font-variant-numeric:tabular-nums;line-height:1}
+.spotify-open{position:relative;z-index:1;align-self:center;min-width:164px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:0;padding:0 20px;border:0;border-radius:999px;background:var(--md-primary);color:var(--md-on-primary);font-size:12px;font-weight:600;box-shadow:0 2px 5px #0004;transition:background .18s,box-shadow .18s,transform .18s}
+.spotify-open:hover{transform:translateY(-1px);background:#dfd0ff;box-shadow:0 4px 12px #0005}
+.spotify-open:active{transform:scale(.98)}
+.spotify-open b{font-size:15px;font-weight:400}
+.music-player-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:15px;border-top:1px solid #ffffff14;color:var(--md-on-surface-variant);font-size:9px}
+.music-player-footer>span:first-child{display:flex;align-items:center;gap:8px;color:var(--md-on-surface);font-size:8px;font-weight:700;letter-spacing:.9px}
+.music-player-footer i{width:7px;height:7px;border-radius:50%;background:#8dddaf;box-shadow:0 0 0 4px #8dddaf15}
+.spotify-art[hidden],.spotify-art-placeholder[hidden],.spotify-progress[hidden],.spotify-open[hidden],.activity-row[hidden],.presence-hint[hidden]{display:none!important}
 
-.discord-presence{width:100%;display:grid;gap:9px;margin:19px auto 0;padding:11px;border:1px solid #ffffff13;border-radius:15px;background:linear-gradient(120deg,#ffffff08,#ffffff03);text-align:left}.presence-heading{min-height:20px;display:flex;align-items:center;gap:8px}.presence-state-dot{width:8px;height:8px;flex:0 0 auto;border:1px solid #ffffff22;border-radius:50%;background:#77717e;box-shadow:0 0 10px #77717e55}.presence-status{color:#e9e5ef;font-size:10px;font-weight:600}.presence-live{margin-left:auto;color:#8d8697;font-size:7px;font-weight:700;letter-spacing:1px}.presence-live:before{display:inline-block;width:5px;height:5px;margin:0 5px 1px 0;border-radius:50%;background:currentColor;content:""}.discord-presence[data-state="online"] .presence-state-dot{background:#5ddb9a;box-shadow:0 0 11px #4cdb8a88}.discord-presence[data-state="idle"] .presence-state-dot{background:#f3c96b;box-shadow:0 0 11px #f3c96b77}.discord-presence[data-state="dnd"] .presence-state-dot{background:#ed727c;box-shadow:0 0 11px #ed727c77}.discord-presence[data-state="offline"] .presence-state-dot{background:#73717c;box-shadow:none}.discord-presence[data-state="unavailable"] .presence-state-dot{background:#8e8798;box-shadow:none}.discord-presence[data-state="live"] .presence-live{color:#6bdca2}.presence-hint{margin:0 0 1px 16px;color:#8e8997;font-size:9px;line-height:1.5}.activity-row,.spotify-row{min-width:0;display:flex;align-items:center;gap:10px;padding-top:9px;border-top:1px solid #ffffff10}.activity-icon{width:29px;height:29px;display:grid;place-items:center;flex:0 0 auto;border:1px solid #a88bff26;border-radius:10px;background:#9a76e51a;color:#c3aaff}.activity-icon svg{width:15px;height:15px;fill:currentColor}.activity-copy,.spotify-copy{min-width:0;display:grid;gap:3px;flex:1}.activity-copy small,.spotify-copy small{color:#8e8798;font-size:7px;font-weight:700;letter-spacing:1.1px}.activity-copy strong,.spotify-copy strong{overflow:hidden;color:#eeeaf4;font-size:9px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}.activity-copy>span:last-child,.spotify-copy>span:last-child{overflow:hidden;color:#a19bab;font-size:8px;text-overflow:ellipsis;white-space:nowrap}.spotify-art{width:37px;height:37px;flex:0 0 auto;border:1px solid #ffffff16;border-radius:8px;background:#292530;object-fit:cover}.spotify-open{display:grid;place-items:center;width:25px;height:25px;flex:0 0 auto;border:1px solid #75d39e30;border-radius:50%;color:#8be0ae;font-size:13px;transition:background .16s}.spotify-open:hover{background:#73d49d1c}.spotify-open[hidden],.activity-row[hidden],.spotify-row[hidden],.presence-hint[hidden]{display:none}
-@media(max-width:600px){.discord-presence{margin-top:16px;padding:10px}.presence-status{font-size:9px}.spotify-art{width:34px;height:34px}}
-.presence-live.is-live{color:#6bdca2}.presence-hint a{color:#c3aaff;text-decoration:underline;text-underline-offset:2px}
-.avatar{position:relative}.avatar-image{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;object-fit:cover;transform:rotate(3deg)}.avatar-image[hidden],.avatar-fallback[hidden]{display:none}.avatar-fallback{position:relative;z-index:1;pointer-events:none}
-.avatar-halo{border-radius:50%;transform:none;animation:halo-turn 24s linear infinite}.avatar-halo:after{position:absolute;inset:-5px;border:1px solid #73c5ff20;border-top-color:#8fcfffad;border-radius:50%;content:"";transform:rotate(-35deg)}.avatar{border-radius:50%;transform:none}.avatar:after{position:absolute;inset:0;border:1px solid #ffffff35;border-radius:inherit;background:linear-gradient(140deg,#ffffff22,transparent 42%,#8d64ff16);box-shadow:inset 0 0 22px #ffffff0b;content:"";pointer-events:none}.avatar-image{border-radius:50%;transform:none}
-.avatar-wrap{filter:drop-shadow(0 0 18px #35c8ff25)}.avatar-halo{inset:-3px;border-color:#9beaff66;box-shadow:0 0 21px #35c8ff40,inset 0 0 18px #4dbfff17}.avatar-halo:after{inset:-9px;border:1px dashed #83e8ff88;filter:drop-shadow(0 0 4px #5bdfff8c)}.avatar{overflow:hidden;clip-path:circle(50% at 50% 50%);border:2px solid #b8f1ff;box-shadow:0 0 0 3px #4dbdff2a,0 0 20px #38caff94,0 0 43px #714bff66,inset 0 0 20px #51d3ff55}.avatar:after{background:radial-gradient(circle at 30% 18%,#d4fbff45,transparent 38%),linear-gradient(145deg,#8aeaff13,transparent 55%,#7755ff21);box-shadow:inset 0 0 17px #71dcff27}.avatar-image{clip-path:circle(50% at 50% 50%);filter:saturate(1.12) contrast(1.08)}.avatar-wrap:before{position:absolute;inset:-8px;z-index:3;border-radius:50%;background:radial-gradient(circle at 14% 22%,#d9fbff 0 1px,transparent 2px),radial-gradient(circle at 83% 17%,#81eaff 0 1.5px,transparent 2.5px),radial-gradient(circle at 91% 64%,#c2f6ff 0 1px,transparent 2px),radial-gradient(circle at 11% 73%,#72ddff 0 1.5px,transparent 2.5px),radial-gradient(circle at 27% 93%,#b6f2ff 0 1px,transparent 2px),radial-gradient(circle at 72% 88%,#8be8ff 0 1px,transparent 2px);content:"";filter:drop-shadow(0 0 3px #5ee2ff);pointer-events:none;animation:ice-particles 4s ease-in-out infinite}.avatar-star{color:#a8f1ff;text-shadow:0 0 7px #72e6ff,0 0 18px #5a9dff;animation:float 3.2s ease-in-out infinite}.star-a{top:12px;right:-5px}.star-b{bottom:12px;left:-5px;color:#a9d9ff}@keyframes ice-particles{0%,100%{opacity:.65;transform:scale(.98) rotate(0)}50%{opacity:1;transform:scale(1.025) rotate(4deg)}}
-.avatar-star{z-index:4}
-.music-squiggle{position:absolute;inset:-19px;z-index:2;width:calc(100% + 38px);height:calc(100% + 38px);overflow:visible;opacity:0;visibility:hidden;pointer-events:none;transform-origin:50% 50%;filter:drop-shadow(0 0 5px #66deff85)}.music-squiggle path{fill:none;stroke:url(#musicWaveGradient);stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.music-orbit-star{fill:#f0deff;font:14px "DM Sans",sans-serif;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #7be8ff)}.avatar-wrap.is-listening .music-squiggle{opacity:1;visibility:visible;animation:music-ring-rotate 16s linear infinite}.spotify-wave{position:static;display:block;width:100%;height:14px;overflow:visible;border-radius:0;background:transparent}.spotify-wave .wave-track{stroke:#d0c8d6;stroke-width:1.6}.spotify-wave .wave-fill{stroke:url(#musicWaveGradient);stroke-width:2.4;stroke-dasharray:0 100;filter:drop-shadow(0 0 2px #8deaff8c);transition:stroke-dasharray .8s linear}.spotify-wave.indeterminate .wave-fill{stroke-dasharray:22 100!important;animation:wave-drift 1.5s ease-in-out infinite alternate}.spotify-times{font-size:7px}@keyframes music-ring-rotate{to{transform:rotate(360deg)}}@keyframes wave-drift{from{stroke-dashoffset:0}to{stroke-dashoffset:-28}}
-.music-squircle{position:absolute;inset:-15px;z-index:2;border:1px solid #9beaff90;border-top-color:#e2b5ff;border-right-color:#6ce7ff;border-radius:40% 60% 46% 54% / 54% 42% 58% 46%;opacity:0;visibility:hidden;box-shadow:0 0 12px #61dfff54,inset 0 0 12px #6edcff23;pointer-events:none}.music-squircle:after{position:absolute;inset:-7px;border:1px dashed #75e7ff58;border-radius:47% 53% 41% 59% / 58% 44% 56% 42%;content:""}.music-squircle>span{position:absolute;top:-9px;left:50%;color:#e4ceff;font-size:17px;text-shadow:0 0 6px #fff,0 0 17px #7ce7ff;transform:translateX(-50%)}.avatar-wrap.is-listening .music-squircle{opacity:1;visibility:visible;animation:squircle-spin 12s linear infinite,squircle-morph 5s ease-in-out infinite alternate}.spotify-copy>#spotifyArtist{overflow:hidden;color:#a19bab;font-size:8px;text-overflow:ellipsis;white-space:nowrap}.spotify-copy>.spotify-progress{min-width:0;display:grid;gap:4px;margin-top:3px;overflow:visible;color:inherit;font-size:inherit;text-overflow:clip;white-space:normal}.spotify-progress-track{position:relative;width:100%;height:3px;overflow:hidden;border-radius:999px;background:#ffffff20}.spotify-progress-track>span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#62e0cf,#a88aff 54%,#76e5ff);box-shadow:0 0 8px #6edfffbd;transition:width .8s linear}.spotify-progress-track.indeterminate>span{animation:progress-shimmer 1.2s ease-in-out infinite alternate}.spotify-times{display:flex;justify-content:space-between;color:#898391;font-size:7px;font-variant-numeric:tabular-nums;line-height:1}.spotify-row{align-items:flex-start}.spotify-open{margin-top:6px}.spotify-art{margin-top:1px}@keyframes squircle-spin{to{transform:rotate(360deg)}}@keyframes squircle-morph{0%,100%{border-radius:40% 60% 46% 54% / 54% 42% 58% 46%}50%{border-radius:52% 48% 57% 43% / 43% 57% 43% 57%}}@keyframes progress-shimmer{from{transform:translateX(-62%);opacity:.58}to{transform:translateX(62%);opacity:1}}
+.profile-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding:19px 3px 22px;color:#aaa4b1;font-size:9px;font-weight:500;letter-spacing:.7px}
+.footer-dots{display:flex;gap:5px}
+.footer-dots i{width:5px;height:5px;border-radius:50%;background:#635e69}
+.footer-dots i:nth-child(2){background:var(--md-primary)}
+.footer-dots i:nth-child(3){background:#a8dfff}
+
+@keyframes halo-turn{to{transform:rotate(360deg)}}
+@keyframes music-ring{to{transform:rotate(360deg)}}
+@keyframes star-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes wave-drift{from{stroke-dashoffset:0}to{stroke-dashoffset:-28}}
+@media(max-width:900px){.profile-page{width:min(100% - 32px,650px)}.about-layout{grid-template-columns:1fr;max-width:580px;gap:18px}.profile-card{min-height:0}.music-player{min-height:620px}}
+@media(max-width:600px){.profile-page{width:calc(100% - 24px)}.profile-nav{height:auto;min-height:68px;flex-wrap:wrap;gap:10px;padding:10px 0}.profile-brand{font-size:11px}.brand-glyph{width:34px;height:34px}.profile-menu{order:3;width:100%;justify-content:center}.profile-nav .profile-menu a{min-height:36px;flex:1;max-width:140px;padding:0 9px;font-size:10px}.profile-menu a svg{width:16px;height:16px}.about-layout{padding:17px 0}.profile-card{padding:18px;border-radius:24px}.profile-topline,.profile-bottomline{font-size:8px}.profile-center{margin:23px auto 20px}.avatar-wrap{width:106px;height:106px}.avatar{width:80px;height:80px}.profile-center h1{font-size:31px}.music-player{min-height:570px;padding:18px;border-radius:24px}.music-player-heading h2{font-size:22px}.spotify-row{gap:15px;padding:13px 3px 17px}.spotify-artwork{width:min(100%,260px);border-radius:21px}.spotify-copy strong{font-size:21px}.music-player-footer{font-size:8px}}
+@media(max-width:370px){.profile-card{padding:15px}.profile-topline{letter-spacing:.4px}.profile-index{font-size:8px}.music-player{min-height:530px;padding:15px}.music-source{padding:6px 8px;font-size:7px}.spotify-artwork{width:min(100%,225px)}.presence-live{padding:4px 7px;font-size:7px}.music-player-footer{align-items:flex-start;flex-direction:column}.music-player-footer>span:last-child{text-align:left}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
