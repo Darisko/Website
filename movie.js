@@ -15,9 +15,9 @@ if (isMoviePage) {
     window.location.replace(new URL("index.html", window.location.href));
   }
 } else {
-  Object.defineProperty(window, "movie", {
-    configurable: false,
-    enumerable: false,
+  Object.defineProperty(globalThis, "movie", {
+    configurable: true,
+    enumerable: true,
     get() {
       try {
         sessionStorage.setItem(MOVIE_PASS_KEY, "granted");
@@ -29,9 +29,4 @@ if (isMoviePage) {
     },
   });
 
-  console.info(
-    "%cDARISKO%c Type movie and press Enter to open the secret screening.",
-    "color:#c8afff;font-weight:800;letter-spacing:2px",
-    "color:#aaa3b4;font-weight:400;letter-spacing:normal",
-  );
 }
